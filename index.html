@@ -1,113 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Ankur Biswas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bengali font -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
-
-    <!-- Serif font for academic look -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: 'Libre Baskerville', serif;
-            background-color: #fbf2df;
-            color: #111;
+            background-color: #f6f1e7;
+            color: #1a1a1a;
         }
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            min-height: 100vh;
-        }
-
-        /* LEFT SIDEBAR */
-        .sidebar {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
-            padding: 30px 25px;
-        }
-
-        .sidebar img {
-            width: 100%;
-            border: 3px solid #ccc;
-            margin-bottom: 20px;
-        }
-
-        .nav a {
-            display: block;
-            color: #eaeaea;
+        a {
+            color: #0b4f8a;
             text-decoration: none;
-            margin-bottom: 12px;
-            font-size: 15px;
         }
 
-        .nav a:hover {
+        a:hover {
             text-decoration: underline;
         }
 
-        /* RIGHT CONTENT */
-        .content {
-            padding: 50px 60px;
-            max-width: 900px;
+        .page {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* LEFT COLUMN */
+        .left {
+            padding: 40px 25px;
+            border-right: 1px solid #d6d0c5;
         }
 
         .bengali-name {
             font-family: 'Noto Serif Bengali', serif;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             margin-bottom: 6px;
+        }
+
+        .english-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .affiliation {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .photo {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .photo img {
+            width: 100%;
+            border: 2px solid #bbb;
+        }
+
+        .menu a {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        /* RIGHT COLUMN */
+        .right {
+            padding: 50px 60px;
         }
 
         h1 {
             font-size: 34px;
             color: #0b4f8a;
-            margin: 0;
+            margin-top: 0;
         }
 
-        .underline {
+        .rule {
             height: 3px;
+            width: 120px;
             background-color: #0b4f8a;
             margin: 12px 0 30px 0;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
         h2 {
             font-size: 20px;
-            margin-top: 40px;
-            border-bottom: 1px solid #bbb;
+            margin-top: 50px;
+            border-bottom: 1px solid #c9c2b6;
             padding-bottom: 6px;
         }
 
-        .contact-item {
-            margin-bottom: 8px;
+        p {
+            font-size: 16px;
+            line-height: 1.65;
+            margin-bottom: 16px;
         }
 
-        a {
-            color: #0b4f8a;
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         /* Responsive */
         @media (max-width: 900px) {
-            .wrapper {
+            .page {
                 grid-template-columns: 1fr;
             }
 
-            .sidebar {
-                text-align: center;
+            .left {
+                border-right: none;
+                border-bottom: 1px solid #d6d0c5;
             }
 
-            .content {
+            .right {
                 padding: 30px;
             }
         }
@@ -116,59 +135,75 @@
 
 <body>
 
-<div class="wrapper">
+<div class="page">
 
     <!-- LEFT -->
-    <aside class="sidebar">
-        <img src="Photos/ME2.jpeg" alt="Ankur Biswas">
+    <aside class="left">
+        <div class="bengali-name" lang="bn">অঙ্কুর বিশ্বাস</div>
+        <div class="english-name">Ankur Biswas</div>
 
-        <nav class="nav">
-            <a href="#home">Home</a>
+        <div class="affiliation">
+            Ph.D. Student<br>
+            Oklahoma State University<br>
+            Stillwater, OK
+        </div>
+
+        <div class="photo">
+            <img src="Photos/ME2.jpeg" alt="Ankur Biswas">
+        </div>
+
+        <nav class="menu">
+            <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#teaching">Teaching</a>
-            <a href="pdf/CV.pdf" target="_blank">CV</a>
+            <a href="#publications">Publications</a>
+            <a href="pdf/CV.pdf" target="_blank">Curriculum Vitae</a>
             <a href="#contact">Contact</a>
         </nav>
     </aside>
 
     <!-- RIGHT -->
-    <main class="content" id="home">
+    <main class="right">
 
-        <div class="bengali-name" lang="bn">অঙ্কুর বিশ্বাস</div>
-        <h1>Ankur Biswas</h1>
-        <div class="underline"></div>
-
-        <p>
-            I am a third-year Ph.D. student at <strong>Oklahoma State University</strong>,
-            working on harmful algal blooms, cyanobacterial toxin production,
-            and the role of sulfur stoichiometry in ecological and toxicological processes.
-        </p>
+        <h1>About</h1>
+        <div class="rule"></div>
 
         <p>
-            My research integrates molecular biology, ionomics, and environmental toxicology
-            under an atom-first biology framework.
+            I am a third-year Ph.D. student at Oklahoma State University. My research
+            focuses on harmful algal blooms, cyanobacterial toxin production, and
+            the role of elemental stoichiometry—particularly sulfur—in regulating
+            ecological and toxicological processes.
         </p>
 
-        <h2 id="contact">Contact Information</h2>
-        <p class="contact-item">
-            <strong>Email:</strong> ankur.biswas@okstate.edu
-        </p>
-        <p class="contact-item">
-            Department of Integrative Biology<br>
-            Oklahoma State University<br>
-            Stillwater, OK, USA
-        </p>
-
-        <h2 id="research">Research Interests</h2>
         <p>
-            • Sulfur metabolism and microcystin biosynthesis<br>
-            • Harmful algal blooms (HABs)<br>
-            • Elemental stoichiometry and freshwater toxicology
+            I am originally from West Bengal, India, and I am interested in integrating
+            molecular biology, ionomics, and environmental toxicology to address
+            pressing aquatic ecosystem challenges.
         </p>
+
+        <h2 id="research">Research</h2>
+        <ul>
+            <li>Sulfur metabolism and microcystin biosynthesis in cyanobacteria</li>
+            <li>Harmful algal blooms (HABs) and freshwater toxicology</li>
+            <li>Elemental stoichiometry, ionomics, and environmental stressors</li>
+        </ul>
 
         <h2 id="teaching">Teaching</h2>
         <p>
-            Graduate Teaching Assistant for undergraduate biology and ecology laboratories.
+            Graduate Teaching Assistant for undergraduate biology and ecology laboratories,
+            with an interest in concept-driven and quantitative biology curricula.
+        </p>
+
+        <h2 id="publications">Publications</h2>
+        <p>
+            Publications and preprints will be listed here.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+            Email: <strong>ankur.biswas@okstate.edu</strong><br>
+            Department of Integrative Biology<br>
+            Oklahoma State University
         </p>
 
     </main>
