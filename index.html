@@ -5,6 +5,7 @@
 <title>Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
@@ -15,7 +16,6 @@ body {
     background-color: #f7f1e3;
     color: #1e1e1e;
 }
-
 a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -27,14 +27,15 @@ a:hover { text-decoration: underline; }
     padding: 16px 40px;
     border-bottom: 1px solid #c9bfae;
 }
-
 .bengali-top {
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
 }
-
-nav a { margin-left: 24px; font-weight: 600; }
+nav a {
+    margin-left: 24px;
+    font-weight: 600;
+}
 
 /* LAYOUT */
 .layout {
@@ -50,14 +51,12 @@ nav a { margin-left: 24px; font-weight: 600; }
     background-size: cover;
     background-position: center;
 }
-
 .left-panel::before {
     content: "";
     position: absolute;
     inset: 16px;
     border: 2px solid rgba(255,255,255,0.35);
 }
-
 .left-panel::after {
     content: "";
     position: absolute;
@@ -70,18 +69,17 @@ nav a { margin-left: 24px; font-weight: 600; }
     z-index: 2;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-/* PORTRAIT (HOME ONLY) */
+/* PORTRAIT */
 .portrait {
-    width: 70%;
+    width: 62%;
     border: 2px solid #c9bfae;
     padding: 8px;
     background: #111;
 }
-
 .portrait img {
     width: 100%;
     display: block;
@@ -96,40 +94,47 @@ nav a { margin-left: 24px; font-weight: 600; }
     text-align: center;
     font-size: 38px;
     font-weight: 700;
-    color: #083a6b;
+    color: #0a3f6b;
 }
-
 .name-rule {
-    width: 260px;
+    width: 280px;
     height: 4px;
-    background-color: #083a6b;
-    margin: 20px auto 60px;
+    background-color: #0a3f6b;
+    margin: 22px auto 60px;
 }
 
-section { margin-bottom: 60px; }
-
+section {
+    margin-bottom: 70px;
+}
 h2 {
     font-size: 22px;
     border-bottom: 1px solid #c9bfae;
     padding-bottom: 6px;
 }
-
 p {
+    line-height: 1.85;
     font-size: 16px;
-    line-height: 1.8;
+}
+ul {
+    padding-left: 18px;
+}
+li {
+    margin-bottom: 10px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 1000px) {
     .layout { grid-template-columns: 1fr; }
-    .left-panel { min-height: 360px; }
+    .left-panel { min-height: 380px; }
     .right-panel { padding: 50px 30px; }
+    .portrait { width: 70%; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -139,8 +144,10 @@ p {
     </nav>
 </div>
 
+<!-- MAIN LAYOUT -->
 <div class="layout">
 
+    <!-- LEFT -->
     <aside class="left-panel">
         <div class="left-inner">
             <div class="portrait">
@@ -149,24 +156,61 @@ p {
         </div>
     </aside>
 
+    <!-- RIGHT -->
     <main class="right-panel">
+
         <div class="name-en">Ankur Biswas</div>
         <div class="name-rule"></div>
 
+        <!-- ABOUT -->
         <section>
             <h2>About</h2>
             <p>
-                I am a third-year Ph.D. student at Oklahoma State University. My research focuses on
-                harmful algal blooms, cyanobacterial toxin production, and the role of elemental
-                stoichiometry—particularly sulfur—in regulating ecological and toxicological processes.
+                I am a Ph.D. student in Integrative Biology at Oklahoma State University, working at the
+                intersection of ecological stoichiometry, environmental toxicology, and molecular biology.
+                My research focuses on harmful algal blooms (HABs), with particular emphasis on how elemental
+                nutrient availability—especially sulfur—regulates cyanobacterial physiology and toxin production.
             </p>
             <p>
-                I am originally from West Bengal, India, and I am interested in integrating molecular
-                biology, ionomics, and environmental toxicology to address pressing aquatic ecosystem challenges.
+                I received my undergraduate training in India and am broadly interested in bridging atom-level
+                biological processes with ecosystem-scale outcomes. My long-term goal is to develop predictive,
+                mechanistic frameworks for understanding and managing freshwater toxic events under global change.
             </p>
         </section>
-    </main>
 
+        <!-- AWARDS -->
+        <section>
+            <h2>Awards and Honors</h2>
+            <ul>
+                <li>Burks Research Award — Best Research in Aquatic Sciences (2025)</li>
+                <li>Best Poster Award — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)</li>
+                <li>Best Poster Award — Integrative Biology Symposium (IBiS)</li>
+                <li>Graduate Research Recognition, Oklahoma State University</li>
+            </ul>
+        </section>
+
+        <!-- SYMPOSIA & SERVICE -->
+        <section>
+            <h2>Symposia, Conferences, and Service</h2>
+            <ul>
+                <li>Organizer, Special Sessions on Nutrient–Toxin Interactions in Aquatic Systems</li>
+                <li>Contributor, NSF Proposal Development (figures, data synthesis)</li>
+                <li>Graduate Teaching Assistant, Biology &amp; Ecology Laboratories</li>
+                <li>Mentor to Undergraduate Researchers, Oklahoma State University</li>
+                <li>Member, Zoology Graduate Student Society (ZoGSS)</li>
+            </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section>
+            <h2>Contact</h2>
+            <p>
+                <strong>Email:</strong> ankur.biswas@okstate.edu<br>
+                <strong>Affiliation:</strong> Oklahoma State University, Stillwater, OK, USA
+            </p>
+        </section>
+
+    </main>
 </div>
 
 </body>
