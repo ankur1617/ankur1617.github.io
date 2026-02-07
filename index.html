@@ -10,13 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-/* =======================
+/* =====================
    GLOBAL
-======================= */
+===================== */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background-color: #f7f1e3; /* old paper */
+    background-color: #f7f1e3;
     color: #1e1e1e;
 }
 
@@ -29,93 +29,77 @@ a:hover {
     text-decoration: underline;
 }
 
-/* =======================
-   TOP NAV
-======================= */
-nav {
-    text-align: center;
-    padding: 18px 0;
+/* =====================
+   TOP BAR
+===================== */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
     border-bottom: 1px solid #c9bfae;
 }
 
+.bengali-top {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
 nav a {
-    margin: 0 18px;
+    margin-left: 24px;
     font-weight: 600;
 }
 
-/* =======================
-   HEADER
-======================= */
-.header {
-    text-align: center;
-    padding: 60px 20px 40px;
-}
-
-.header .rule {
-    width: 180px;
-    height: 2px;
-    background-color: #0b4f8a;
-    margin: 18px auto;
-}
-
-.bengali-name {
-    font-family: 'Noto Serif Bengali', serif;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.english-name {
-    font-size: 30px;
-    font-weight: 700;
-    color: #0b4f8a;
-}
-
-/* =======================
+/* =====================
    MAIN LAYOUT
-======================= */
-.main {
-    max-width: 1100px;
-    margin: auto;
+===================== */
+.layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 60px;
-    padding: 40px 40px 80px;
+    grid-template-columns: 40% 60%;
+    min-height: calc(100vh - 70px);
 }
 
-/* =======================
+/* =====================
    LEFT PANEL
-======================= */
-.left {
+===================== */
+.left-panel {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: center;
-    border: 1px solid #c9bfae;
+}
+
+/* Border frame */
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 2px solid rgba(255,255,255,0.35);
 }
 
 /* Dark overlay */
-.left::before {
+.left-panel::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0,0,0,0.55);
 }
 
-/* Left content */
-.left-content {
+.left-inner {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 30px 20px;
-    color: #f3f3f3;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Portrait */
 .portrait {
+    width: 60%;
     border: 2px solid #c9bfae;
     padding: 8px;
-    margin-bottom: 24px;
     background: #111;
 }
 
@@ -124,29 +108,41 @@ nav a {
     display: block;
 }
 
-/* Contact */
-.contact {
-    font-size: 14px;
-    line-height: 1.6;
+/* =====================
+   RIGHT PANEL
+===================== */
+.right-panel {
+    padding: 80px 90px;
+    background-color: #f7f1e3;
 }
 
-/* =======================
-   RIGHT COLUMN
-======================= */
-.right section {
-    margin-bottom: 40px;
+.name-en {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b4f8a;
 }
 
-.right h2 {
+.name-rule {
+    width: 160px;
+    height: 2px;
+    background-color: #0b4f8a;
+    margin: 18px auto 50px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
     font-size: 22px;
-    margin-top: 0;
     border-bottom: 1px solid #c9bfae;
     padding-bottom: 6px;
 }
 
 p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 ul {
@@ -157,17 +153,24 @@ li {
     margin-bottom: 8px;
 }
 
-/* =======================
+/* =====================
    RESPONSIVE
-======================= */
-@media (max-width: 900px) {
-    .main {
+===================== */
+@media (max-width: 1000px) {
+    .layout {
         grid-template-columns: 1fr;
-        gap: 40px;
     }
 
-    .left {
-        min-height: 420px;
+    .left-panel {
+        min-height: 400px;
+    }
+
+    .right-panel {
+        padding: 50px 30px;
+    }
+
+    .portrait {
+        width: 70%;
     }
 }
 </style>
@@ -175,46 +178,35 @@ li {
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-    <a href="index.html">Home</a>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
-    <a href="pdf/CV.pdf" target="_blank">CV</a>
-    <a href="#contact">Contact</a>
-</nav>
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="pdf/CV.pdf" target="_blank">CV</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="rule"></div>
-    <div class="bengali-name" lang="bn">অঙ্কুর বিশ্বাস</div>
-    <div class="english-name">Ankur Biswas</div>
-    <div class="rule"></div>
-</header>
+<!-- MAIN -->
+<div class="layout">
 
-<!-- MAIN CONTENT -->
-<div class="main">
-
-    <!-- LEFT PANEL -->
-    <aside class="left">
-        <div class="left-content" id="contact">
-
+    <!-- LEFT -->
+    <aside class="left-panel">
+        <div class="left-inner">
             <div class="portrait">
                 <img src="Pictures/Conference Pic.jpeg" alt="Ankur Biswas">
             </div>
-
-            <div class="contact">
-                <strong>Ph.D. Student</strong><br>
-                Oklahoma State University<br>
-                Stillwater, OK<br><br>
-                ankur.biswas@okstate.edu
-            </div>
-
         </div>
     </aside>
 
-    <!-- RIGHT PANEL -->
-    <main class="right">
+    <!-- RIGHT -->
+    <main class="right-panel">
+
+        <div class="name-en">Ankur Biswas</div>
+        <div class="name-rule"></div>
 
         <section>
             <h2>About</h2>
@@ -229,7 +221,7 @@ li {
             </p>
         </section>
 
-        <section id="research">
+        <section>
             <h2>Research</h2>
             <ul>
                 <li>Sulfur metabolism and microcystin biosynthesis in cyanobacteria</li>
@@ -238,17 +230,12 @@ li {
             </ul>
         </section>
 
-        <section id="teaching">
+        <section>
             <h2>Teaching</h2>
             <p>
                 Graduate Teaching Assistant for undergraduate biology and ecology laboratories,
                 with an interest in concept-driven and quantitative biology curricula.
             </p>
-        </section>
-
-        <section>
-            <h2>Publications</h2>
-            <p>Publications and preprints will be listed here.</p>
         </section>
 
     </main>
