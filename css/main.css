@@ -1,0 +1,172 @@
+/* =====================
+   GLOBAL
+===================== */
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f7f1e3;
+    color: #1e1e1e;
+}
+
+a {
+    color: #083a6b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   TOP BAR
+===================== */
+.topbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #c9bfae;
+    background-color: #f7f1e3;
+}
+
+.bengali-top {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.nav-links a {
+    margin-left: 26px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.layout {
+    display: grid;
+    grid-template-columns: 26% 74%;
+    min-height: calc(100vh - 56px);
+}
+
+/* =====================
+   LEFT PANEL
+===================== */
+.left-panel {
+    position: relative;
+    background-image: url("../Pictures/Double Tribal.jpeg");
+    background-size: cover;
+    background-position: center top;
+}
+
+/* frame */
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 2px solid rgba(255,255,255,0.35);
+}
+
+/* dark overlay */
+.left-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* portrait (HOME ONLY) */
+.home .portrait-wrap {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68%;
+    border: 2px solid #c9bfae;
+    padding: 8px;
+    background: #111;
+    z-index: 2;
+}
+
+.home .portrait-wrap img {
+    width: 100%;
+    display: block;
+}
+
+/* hide portrait elsewhere */
+:not(.home) .portrait-wrap {
+    display: none;
+}
+
+/* =====================
+   RIGHT PANEL
+===================== */
+.right-panel {
+    padding: 50px 70px;
+    background-color: #f7f1e3;
+}
+
+/* NAME */
+.name-en {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0a3f6b;
+    margin: 0 0 6px 0;
+}
+
+/* DOUBLE RULE */
+.rule-thick {
+    height: 4px;
+    background-color: #0a3f6b;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.rule-thin {
+    height: 1px;
+    background-color: #0a3f6b;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+/* TEXT */
+p {
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0 0 22px 0;
+}
+
+/* SECTION BAR (reference-style) */
+.section-bar {
+    margin-top: 26px;
+    padding-top: 10px;
+    border-top: 1px solid #c9bfae;
+    font-size: 15px;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        min-height: 420px;
+    }
+
+    .right-panel {
+        padding: 40px 30px;
+    }
+
+    .home .portrait-wrap {
+        width: 70%;
+        top: 40px;
+    }
+}
