@@ -14,7 +14,7 @@
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background-color: #f7f1e3;
+    background-color: #f7f1e3; /* old paper */
     color: #1e1e1e;
 }
 
@@ -70,20 +70,43 @@ nav a {
     max-width: 1100px;
     margin: auto;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px 1fr;
     gap: 60px;
     padding: 40px 40px 80px;
 }
 
-/* LEFT COLUMN */
+/* LEFT COLUMN WITH BACKGROUND IMAGE */
 .left {
-    text-align: center;
+    position: relative;
+    background-image: url("Photos/Double Tribal.jpeg");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #c9bfae;
 }
 
+/* Dark overlay for readability */
+.left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Left content sits above overlay */
+.left-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 30px 20px;
+    color: #f3f3f3;
+}
+
+/* PORTRAIT */
 .portrait {
     border: 2px solid #c9bfae;
     padding: 8px;
     margin-bottom: 24px;
+    background: #111;
 }
 
 .portrait img {
@@ -91,6 +114,7 @@ nav a {
     display: block;
 }
 
+/* CONTACT */
 .contact {
     font-size: 14px;
     line-height: 1.6;
@@ -127,6 +151,10 @@ li {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .left {
+        min-height: 420px;
+    }
 }
 </style>
 </head>
@@ -154,16 +182,20 @@ li {
 <div class="main">
 
     <!-- LEFT -->
-    <aside class="left" id="contact">
-        <div class="portrait">
-            <img src="Photos/ME2.jpeg" alt="Ankur Biswas">
-        </div>
+    <aside class="left">
+        <div class="left-content" id="contact">
 
-        <div class="contact">
-            <strong>Ph.D. Student</strong><br>
-            Oklahoma State University<br>
-            Stillwater, OK<br><br>
-            ankur.biswas@okstate.edu
+            <div class="portrait">
+                <img src="Photos/Conference Pic.jpeg" alt="Ankur Biswas">
+            </div>
+
+            <div class="contact">
+                <strong>Ph.D. Student</strong><br>
+                Oklahoma State University<br>
+                Stillwater, OK<br><br>
+                ankur.biswas@okstate.edu
+            </div>
+
         </div>
     </aside>
 
