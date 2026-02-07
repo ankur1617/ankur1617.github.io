@@ -21,29 +21,21 @@ body {
 }
 
 nav a {
-    margin-left: 28px;
+    margin-left: 26px;
     font-weight: 600;
     color: #0a3f6b;
     text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* HERO */
 .hero {
-    position: relative;
-    height: 420px;
+    height: 440px;
     background-image: url("../Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 0 80px;
+    position: relative;
 }
 
-/* Dark overlay */
 .hero::after {
     content: "";
     position: absolute;
@@ -51,16 +43,26 @@ nav a:hover {
     background: rgba(0,0,0,0.45);
 }
 
-/* Portrait */
-.hero-portrait {
+.hero-center {
     position: relative;
     z-index: 2;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f7f1e3;
+    text-align: center;
+}
+
+/* RECTANGULAR PORTRAIT */
+.hero-portrait {
+    width: 180px;
+    height: 240px;
     border: 3px solid #e6d8b8;
-    margin-right: 60px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    background: #111;
 }
 
 .hero-portrait img {
@@ -70,65 +72,73 @@ nav a:hover {
     object-position: top center;
 }
 
-/* Hero text */
-.hero-text {
-    position: relative;
-    z-index: 2;
-    color: #f7f1e3;
-    max-width: 600px;
+.hero-center h1 {
+    font-size: 38px;
+    margin: 0 0 6px 0;
 }
 
-.hero-text h1 {
-    font-size: 42px;
-    margin: 0 0 10px 0;
-}
-
-.hero-text p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 0;
+.hero-line {
+    font-size: 16px;
+    max-width: 720px;
+    line-height: 1.4;
 }
 
 /* CONTENT */
 .content {
-    max-width: 900px;
-    padding: 60px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 40px 80px;
 }
 
-.content p {
-    line-height: 1.75;
-    margin: 0 0 16px 0;
+.section {
+    margin-top: 34px;
 }
 
-h2 {
-    margin-top: 40px;
-    padding-top: 6px;
-    border-top: 2px solid #c9bfae;
-    font-size: 18px;
+/* HEADER WITH DOUBLE LINES */
+.section-header {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 32px 0 18px;
+    padding: 6px 0;
+    border-top: 1px solid #c9bfae;
+    border-bottom: 1px solid #c9bfae;
+    color: #0a3f6b;
+}
+
+/* TEXT DENSITY */
+p {
+    line-height: 1.65;
+    margin: 0 0 10px 0;
 }
 
 ul {
     padding-left: 18px;
+    margin: 0;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+}
+
+/* LINKS */
+a {
+    color: #0a3f6b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
     .hero {
-        flex-direction: column;
         height: auto;
-        padding: 60px 30px;
-        text-align: center;
-    }
-
-    .hero-portrait {
-        margin: 0 0 20px 0;
+        padding: 60px 20px;
     }
 
     .content {
-        padding: 40px 30px;
+        padding: 40px 20px;
     }
 }
