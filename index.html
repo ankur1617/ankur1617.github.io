@@ -25,25 +25,34 @@ a {
     color: #0a4a82;
     text-decoration: none;
 }
-a:hover { text-decoration: underline; }
+a:hover {
+    text-decoration: underline;
+}
 
 /* =====================
    TOP BAR
 ===================== */
 .topbar {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 10px 40px;
     border-bottom: 1px solid #c9bfae;
+    background-color: #f7f1e3;
 }
 
+/* Centered Bengali name */
 .bengali-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
 }
 
+/* Nav links stay right */
 nav a {
     margin-left: 26px;
     font-weight: 600;
@@ -55,7 +64,7 @@ nav a {
 .layout {
     display: grid;
     grid-template-columns: 25% 75%;
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - 52px);
 }
 
 /* =====================
@@ -65,9 +74,10 @@ nav a {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: top center;
 }
 
+/* Frame */
 .left-panel::before {
     content: "";
     position: absolute;
@@ -75,6 +85,7 @@ nav a {
     border: 1px solid rgba(255,255,255,0.35);
 }
 
+/* Dark overlay */
 .left-panel::after {
     content: "";
     position: absolute;
@@ -82,74 +93,47 @@ nav a {
     background: rgba(0,0,0,0.55);
 }
 
-/* Portrait positioned at TOP */
-.left-inner {
-    position: relative;
-    z-index: 2;
-    padding-top: 36px;
-    display: flex;
-    justify-content: center;
-}
-
-.portrait {
-    width: 62%;
-    border: 1px solid #c9bfae;
-    padding: 5px;
-    background: #111;
-}
-
-.portrait img {
-    width: 100%;
-    display: block;
-}
-
 /* =====================
    RIGHT PANEL
 ===================== */
 .right-panel {
-    padding: 64px 110px;
+    padding: 56px 110px 80px 110px;
 }
 
 /* Name */
 .name-en {
-    text-align: center;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 700;
     color: #0a4a82;
+    margin-bottom: 10px;
+}
+
+/* Double underline */
+.rule-thick {
+    height: 3px;
+    background-color: #0a4a82;
+    width: 100%;
     margin-bottom: 6px;
 }
-
-.name-rule {
-    width: 320px;
+.rule-thin {
     height: 1px;
     background-color: #0a4a82;
-    margin: 16px auto 48px;
+    width: 100%;
+    margin-bottom: 34px;
 }
 
-/* Sections */
-section {
-    margin-bottom: 64px;
-}
-
-h2 {
-    font-size: 16px;
-    font-weight: 700;
-    border-bottom: 1px solid #c9bfae;
-    padding-bottom: 4px;
-    margin-bottom: 22px;
-}
-
-p {
+/* Text */
+.main-text {
     line-height: 1.95;
-    margin-bottom: 1.6em;
 }
 
-ul {
-    padding-left: 22px;
-}
-
-li {
-    margin-bottom: 10px;
+/* Section bars (reference-style) */
+.section-bar {
+    margin-top: 46px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #c9bfae;
+    font-weight: 700;
 }
 
 /* =====================
@@ -160,13 +144,10 @@ li {
         grid-template-columns: 1fr;
     }
     .left-panel {
-        min-height: 380px;
+        min-height: 360px;
     }
     .right-panel {
-        padding: 48px 36px;
-    }
-    .portrait {
-        width: 70%;
+        padding: 40px 36px;
     }
 }
 </style>
@@ -188,63 +169,48 @@ li {
 <div class="layout">
 
     <!-- LEFT -->
-    <aside class="left-panel">
-        <div class="left-inner">
-            <div class="portrait">
-                <img src="Pictures/Conference Pic.jpeg" alt="Ankur Biswas">
-            </div>
-        </div>
-    </aside>
+    <aside class="left-panel"></aside>
 
     <!-- RIGHT -->
     <main class="right-panel">
 
         <div class="name-en">Ankur Biswas</div>
-        <div class="name-rule"></div>
+        <div class="rule-thick"></div>
+        <div class="rule-thin"></div>
 
-        <section>
-            <h2>About</h2>
-            <p>
-                I am a Ph.D. student in Integrative Biology at Oklahoma State University, working at the
-                intersection of ecological stoichiometry, environmental toxicology, and molecular biology.
-                My research focuses on harmful algal blooms (HABs), with particular emphasis on how elemental
-                nutrient availability regulates cyanobacterial physiology and toxin production.
-            </p>
-            <p>
-                I received my undergraduate training in India and am broadly interested in bridging atom-level
-                biological processes with ecosystem-scale outcomes. My long-term goal is to develop predictive,
-                mechanistic frameworks for understanding and managing freshwater toxic events under global change.
-            </p>
-        </section>
+        <div class="main-text">
+            I am a Ph.D. student in Integrative Biology at Oklahoma State University, working at the
+            intersection of ecological stoichiometry, environmental toxicology, and molecular biology.
+            My research focuses on harmful algal blooms (HABs), with particular emphasis on how elemental
+            nutrient availability regulates cyanobacterial physiology and toxin production.
+            I received my undergraduate training in India and am broadly interested in bridging
+            atom-level biological processes with ecosystem-scale outcomes.
+            My long-term goal is to develop predictive, mechanistic frameworks for understanding
+            and managing freshwater toxic events under global change.
+        </div>
 
-        <section>
-            <h2>Awards and Honors</h2>
-            <ul>
-                <li>Burks Research Award — Best Research in Aquatic Sciences (2025)</li>
-                <li>Best Poster Award — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)</li>
-                <li>Best Poster Award — Integrative Biology Symposium (IBiS)</li>
-                <li>Graduate Research Recognition, Oklahoma State University</li>
-            </ul>
-        </section>
+        <div class="section-bar">Awards and Honors</div>
+        <div class="main-text">
+            Burks Research Award — Best Research in Aquatic Sciences (2025)<br>
+            Best Poster Award — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
+            Best Poster Award — Integrative Biology Symposium (IBiS)<br>
+            Graduate Research Recognition, Oklahoma State University
+        </div>
 
-        <section>
-            <h2>Symposia, Conferences, and Service</h2>
-            <ul>
-                <li>Organizer, Special Sessions on Nutrient–Toxin Interactions in Aquatic Systems</li>
-                <li>Contributor, NSF Proposal Development</li>
-                <li>Graduate Teaching Assistant, Biology &amp; Ecology Laboratories</li>
-                <li>Mentor to Undergraduate Researchers</li>
-                <li>Member, Zoology Graduate Student Society (ZoGSS)</li>
-            </ul>
-        </section>
+        <div class="section-bar">Symposia, Conferences, and Service</div>
+        <div class="main-text">
+            Organizer, special sessions on nutrient–toxin interactions in aquatic systems.<br>
+            Contributor to NSF proposal development through figure design and data synthesis.<br>
+            Graduate Teaching Assistant for undergraduate biology and ecology laboratories.<br>
+            Mentor to undergraduate researchers at Oklahoma State University.<br>
+            Member, Zoology Graduate Student Society (ZoGSS).
+        </div>
 
-        <section>
-            <h2>Contact</h2>
-            <p>
-                <strong>Email:</strong> ankur.biswas@okstate.edu<br>
-                <strong>Affiliation:</strong> Oklahoma State University, Stillwater, OK, USA
-            </p>
-        </section>
+        <div class="section-bar">Contact</div>
+        <div class="main-text">
+            <strong>Email:</strong> <a href="mailto:ankur.biswas@okstate.edu">ankur.biswas@okstate.edu</a><br>
+            Oklahoma State University, Stillwater, OK, USA
+        </div>
 
     </main>
 </div>
