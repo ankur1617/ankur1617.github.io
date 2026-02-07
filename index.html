@@ -18,7 +18,7 @@ body {
     font-family: 'Libre Baskerville', serif;
     background-color: #f7f1e3;
     color: #1f1f1f;
-    font-size: 15.5px;
+    font-size: 14px;
 }
 
 a {
@@ -40,7 +40,7 @@ a:hover { text-decoration: underline; }
 
 .bengali-top {
     font-family: 'Noto Serif Bengali', serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
 }
 
@@ -55,7 +55,7 @@ nav a {
 .layout {
     display: grid;
     grid-template-columns: 25% 75%;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 56px);
 }
 
 /* =====================
@@ -72,7 +72,7 @@ nav a {
     content: "";
     position: absolute;
     inset: 14px;
-    border: 1.5px solid rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.35);
 }
 
 .left-panel::after {
@@ -82,22 +82,22 @@ nav a {
     background: rgba(0,0,0,0.55);
 }
 
+/* Portrait positioned at TOP */
 .left-inner {
     position: relative;
     z-index: 2;
-    height: 100%;
+    padding-top: 36px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-/* Portrait */
 .portrait {
-    width: 60%;
-    border: 1.5px solid #c9bfae;
-    padding: 6px;
+    width: 62%;
+    border: 1px solid #c9bfae;
+    padding: 5px;
     background: #111;
 }
+
 .portrait img {
     width: 100%;
     display: block;
@@ -107,23 +107,23 @@ nav a {
    RIGHT PANEL
 ===================== */
 .right-panel {
-    padding: 70px 110px;
+    padding: 64px 110px;
 }
 
 /* Name */
 .name-en {
     text-align: center;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
     color: #0a4a82;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .name-rule {
-    width: 340px;
-    height: 2px;
+    width: 320px;
+    height: 1px;
     background-color: #0a4a82;
-    margin: 18px auto 60px;
+    margin: 16px auto 48px;
 }
 
 /* Sections */
@@ -132,17 +132,16 @@ section {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    letter-spacing: 0.04em;
     border-bottom: 1px solid #c9bfae;
-    padding-bottom: 6px;
-    margin-bottom: 18px;
+    padding-bottom: 4px;
+    margin-bottom: 22px;
 }
 
 p {
-    line-height: 1.75;
-    margin-bottom: 18px;
+    line-height: 1.95;
+    margin-bottom: 1.6em;
 }
 
 ul {
@@ -161,10 +160,10 @@ li {
         grid-template-columns: 1fr;
     }
     .left-panel {
-        min-height: 360px;
+        min-height: 380px;
     }
     .right-panel {
-        padding: 50px 36px;
+        padding: 48px 36px;
     }
     .portrait {
         width: 70%;
@@ -232,9 +231,9 @@ li {
             <h2>Symposia, Conferences, and Service</h2>
             <ul>
                 <li>Organizer, Special Sessions on Nutrient–Toxin Interactions in Aquatic Systems</li>
-                <li>Contributor, NSF Proposal Development (figures, data synthesis)</li>
+                <li>Contributor, NSF Proposal Development</li>
                 <li>Graduate Teaching Assistant, Biology &amp; Ecology Laboratories</li>
-                <li>Mentor to Undergraduate Researchers, Oklahoma State University</li>
+                <li>Mentor to Undergraduate Researchers</li>
                 <li>Member, Zoology Graduate Student Society (ZoGSS)</li>
             </ul>
         </section>
