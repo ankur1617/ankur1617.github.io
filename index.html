@@ -21,7 +21,7 @@ body {
 }
 
 a {
-    color: #0b4f8a;
+    color: #083a6b;
     text-decoration: none;
 }
 
@@ -56,7 +56,7 @@ nav a {
 ===================== */
 .layout {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
     min-height: calc(100vh - 70px);
 }
 
@@ -70,15 +70,13 @@ nav a {
     background-position: center;
 }
 
-/* Border frame */
 .left-panel::before {
     content: "";
     position: absolute;
-    inset: 18px;
+    inset: 16px;
     border: 2px solid rgba(255,255,255,0.35);
 }
 
-/* Dark overlay */
 .left-panel::after {
     content: "";
     position: absolute;
@@ -95,9 +93,9 @@ nav a {
     justify-content: center;
 }
 
-/* Portrait */
+/* Portrait (HOME ONLY) */
 .portrait {
-    width: 60%;
+    width: 70%;
     border: 2px solid #c9bfae;
     padding: 8px;
     background: #111;
@@ -112,26 +110,28 @@ nav a {
    RIGHT PANEL
 ===================== */
 .right-panel {
-    padding: 80px 90px;
+    padding: 90px 110px;
     background-color: #f7f1e3;
 }
 
+/* Name */
 .name-en {
     text-align: center;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 700;
-    color: #0b4f8a;
+    color: #083a6b;
 }
 
 .name-rule {
-    width: 160px;
-    height: 2px;
-    background-color: #0b4f8a;
-    margin: 18px auto 50px;
+    width: 260px;
+    height: 4px;
+    background-color: #083a6b;
+    margin: 20px auto 60px;
 }
 
+/* Sections */
 section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 h2 {
@@ -142,7 +142,7 @@ h2 {
 
 p {
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 ul {
@@ -162,7 +162,7 @@ li {
     }
 
     .left-panel {
-        min-height: 400px;
+        min-height: 360px;
     }
 
     .right-panel {
@@ -170,7 +170,7 @@ li {
     }
 
     .portrait {
-        width: 70%;
+        width: 65%;
     }
 }
 </style>
@@ -185,15 +185,13 @@ li {
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
-        <a href="pdf/CV.pdf" target="_blank">CV</a>
-        <a href="contact.html">Contact</a>
     </nav>
 </div>
 
 <!-- MAIN -->
 <div class="layout">
 
-    <!-- LEFT -->
+    <!-- LEFT (WITH PORTRAIT) -->
     <aside class="left-panel">
         <div class="left-inner">
             <div class="portrait">
