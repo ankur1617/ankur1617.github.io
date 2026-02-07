@@ -14,12 +14,12 @@
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background-color: #f5efe3;
-    color: #1f1f1f;
+    background-color: #f2f3f5; /* cooler engineering paper */
+    color: #1a1a1a;
 }
 
 a {
-    color: #0b4f8a;
+    color: #0a4a7a;
     text-decoration: none;
 }
 
@@ -29,8 +29,8 @@ a:hover {
 
 /* TOP MENU */
 .top-nav {
-    background-color: #f5efe3;
-    border-bottom: 1px solid #cfc8bb;
+    background-color: #f2f3f5;
+    border-bottom: 1px solid #c7ccd1;
     padding: 16px 40px;
 }
 
@@ -48,20 +48,14 @@ a:hover {
 
 /* LEFT PANEL */
 .left-panel {
-    position: relative;
-    background-image: url("Photos/left-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    color: #f2f2f2;
+    background-color: #6b6b68; /* graphite */
+    color: #f4f4f4;
 }
 
-.left-overlay {
-    background: rgba(0, 0, 0, 0.55);
-    height: 100%;
+.left-inner {
     padding: 40px 25px;
 }
 
-/* NAME */
 .bengali-name {
     font-family: 'Noto Serif Bengali', serif;
     font-size: 26px;
@@ -69,18 +63,17 @@ a:hover {
     margin-bottom: 6px;
 }
 
-.english-name {
-    font-size: 22px;
+.left-name {
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
-/* PORTRAIT */
 .portrait-frame {
     border: 2px solid #ddd;
     padding: 6px;
-    margin: 25px 0;
     background: #111;
+    margin-bottom: 20px;
 }
 
 .portrait-frame img {
@@ -88,14 +81,9 @@ a:hover {
     display: block;
 }
 
-/* CONTACT */
 .contact {
     font-size: 14px;
     line-height: 1.6;
-}
-
-.contact strong {
-    color: #fff;
 }
 
 /* RIGHT CONTENT */
@@ -104,23 +92,24 @@ a:hover {
     max-width: 900px;
 }
 
-h1 {
-    font-size: 34px;
-    color: #0b4f8a;
+.main-name {
+    font-size: 38px;
+    font-weight: 700;
+    color: #0a4a7a;
     margin-top: 0;
 }
 
-.rule {
-    width: 120px;
+.name-rule {
+    width: 160px;
     height: 3px;
-    background-color: #0b4f8a;
-    margin: 12px 0 30px 0;
+    background-color: #0a4a7a;
+    margin: 14px 0 40px 0;
 }
 
 h2 {
     font-size: 20px;
     margin-top: 50px;
-    border-bottom: 1px solid #c3bdb1;
+    border-bottom: 1px solid #9aa3ad;
     padding-bottom: 6px;
 }
 
@@ -165,10 +154,10 @@ li {
 
 <!-- LEFT -->
 <aside class="left-panel">
-    <div class="left-overlay">
+    <div class="left-inner">
 
         <div class="bengali-name" lang="bn">অঙ্কুর বিশ্বাস</div>
-        <div class="english-name">Ankur Biswas</div>
+        <div class="left-name">Ankur Biswas</div>
 
         <div class="portrait-frame">
             <img src="Photos/ME2.jpeg" alt="Ankur Biswas">
@@ -187,9 +176,11 @@ li {
 <!-- RIGHT -->
 <main class="content">
 
-    <h1>About</h1>
-    <div class="rule"></div>
+    <!-- MAIN TITLE -->
+    <div class="main-name">Ankur Biswas</div>
+    <div class="name-rule"></div>
 
+    <h2>About</h2>
     <p>
         I am a third-year Ph.D. student at Oklahoma State University. My research focuses on
         harmful algal blooms, cyanobacterial toxin production, and the role of elemental
