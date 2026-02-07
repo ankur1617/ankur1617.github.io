@@ -64,29 +64,42 @@ nav a { margin-left: 24px; font-weight: 600; }
 .right-panel {
     padding: 90px 110px;
 }
+
 .page-title {
     text-align: center;
     font-size: 34px;
     font-weight: 700;
     color: #083a6b;
 }
+
 .title-rule {
-    width: 220px;
+    width: 240px;
     height: 4px;
     background-color: #083a6b;
     margin: 20px auto 60px;
 }
 
 section { margin-bottom: 60px; }
+
 h2 {
     font-size: 22px;
     border-bottom: 1px solid #c9bfae;
     padding-bottom: 6px;
 }
-p { line-height: 1.8; }
-ul { padding-left: 18px; }
-li { margin-bottom: 10px; }
 
+p {
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1000px) {
     .layout { grid-template-columns: 1fr; }
     .left-panel { min-height: 360px; }
@@ -97,6 +110,7 @@ li { margin-bottom: 10px; }
 
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -106,6 +120,7 @@ li { margin-bottom: 10px; }
     </nav>
 </div>
 
+<!-- MAIN LAYOUT -->
 <div class="layout">
 
     <aside class="left-panel"></aside>
@@ -115,6 +130,7 @@ li { margin-bottom: 10px; }
         <div class="page-title">Research</div>
         <div class="title-rule"></div>
 
+        <!-- OVERVIEW -->
         <section>
             <h2>Research Overview</h2>
             <p>
@@ -130,6 +146,7 @@ li { margin-bottom: 10px; }
             </p>
         </section>
 
+        <!-- THEMES -->
         <section>
             <h2>Current Research Themes</h2>
             <ul>
@@ -140,6 +157,51 @@ li { margin-bottom: 10px; }
             </ul>
         </section>
 
+        <!-- PAPERS -->
+        <section>
+            <h2>Manuscripts and Publications</h2>
+            <ul>
+                <li>
+                    <strong>Biswas, A.</strong>, Jeyasingh, P. D., &amp; Belden, J. B.
+                    <em>Sulfur availability regulates microcystin production through elemental and molecular constraints in <span style="font-style:italic;">Microcystis aeruginosa</span>.</em>
+                    <br>
+                    <span>(Manuscript in preparation)</span>
+                </li>
+
+                <li>
+                    <strong>Biswas, A.</strong>, et al.
+                    <em>Stoichiometric controls on cyanotoxin production under nutrient stress.</em>
+                    <br>
+                    <span>(Planned submission)</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PRESENTATIONS -->
+        <section>
+            <h2>Conference Presentations and Posters</h2>
+            <ul>
+                <li>
+                    <strong>Biswas, A.</strong>, et al.  
+                    <em>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</em>  
+                    Society of Toxicology (SOT) Annual Meeting.
+                </li>
+
+                <li>
+                    <strong>Biswas, A.</strong>, et al.  
+                    <em>Elemental constraints on harmful algal bloom toxicity.</em>  
+                    Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA).
+                </li>
+
+                <li>
+                    <strong>Biswas, A.</strong>, et al.  
+                    <em>Linking sulfur stoichiometry to cyanobacterial toxin production.</em>  
+                    Integrative Biology Symposium (IBiS), Oklahoma State University.
+                </li>
+            </ul>
+        </section>
+
+        <!-- METHODS -->
         <section>
             <h2>Methods and Approaches</h2>
             <ul>
@@ -147,7 +209,7 @@ li { margin-bottom: 10px; }
                 <li>Microcystin quantification (ELISA)</li>
                 <li>Elemental profiling using ICP-OES (ionomics)</li>
                 <li>RNA-based molecular and transcriptomic analyses</li>
-                <li>Advanced statistical modeling in R</li>
+                <li>Advanced statistical modeling and visualization in R</li>
             </ul>
         </section>
 
