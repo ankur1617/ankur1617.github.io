@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Research | Ankur Biswas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Research profile of Ankur Biswas">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* =====================
+   GLOBAL
+===================== */
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f7f1e3;
+    color: #1e1e1e;
+}
+
+a {
+    color: #0b4f8a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   TOP BAR
+===================== */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    border-bottom: 1px solid #c9bfae;
+}
+
+.bengali-top {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+nav a {
+    margin-left: 24px;
+    font-weight: 600;
+}
+
+/* =====================
+   MAIN LAYOUT
+===================== */
+.layout {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: calc(100vh - 70px);
+}
+
+/* =====================
+   LEFT PANEL
+===================== */
+.left-panel {
+    position: relative;
+    background-image: url("Pictures/Double Tribal.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 2px solid rgba(255,255,255,0.35);
+}
+
+.left-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.left-inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait {
+    width: 60%;
+    border: 2px solid #c9bfae;
+    padding: 8px;
+    background: #111;
+}
+
+.portrait img {
+    width: 100%;
+    display: block;
+}
+
+/* =====================
+   RIGHT PANEL
+===================== */
+.right-panel {
+    padding: 80px 90px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #0b4f8a;
+}
+
+.title-rule {
+    width: 160px;
+    height: 2px;
+    background-color: #0b4f8a;
+    margin: 18px auto 50px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 22px;
+    border-bottom: 1px solid #c9bfae;
+    padding-bottom: 6px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        min-height: 400px;
+    }
+
+    .right-panel {
+        padding: 50px 30px;
+    }
+
+    .portrait {
+        width: 70%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="education.html">Education</a>
+        <a href="pdf/CV.pdf" target="_blank">CV</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+
+<!-- MAIN -->
+<div class="layout">
+
+    <!-- LEFT -->
+    <aside class="left-panel">
+        <div class="left-inner">
+            <div class="portrait">
+                <img src="Pictures/Conference Pic.jpeg" alt="Ankur Biswas">
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <main class="right-panel">
+
+        <div class="page-title">Research</div>
+        <div class="title-rule"></div>
+
+        <section>
+            <h2>Research Overview</h2>
+            <p>
+                My research focuses on understanding how elemental nutrient availability—particularly
+                sulfur—regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
+                I work at the interface of ecological stoichiometry, molecular biology, and environmental
+                toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
+            </p>
+            <p>
+                My doctoral work aims to integrate physiological measurements, ionomics, and gene expression
+                analyses to identify mechanistic controls on microcystin biosynthesis in
+                <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
+            </p>
+        </section>
+
+        <section>
+            <h2>Current Research Themes</h2>
+            <ul>
+                <li>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria</li>
+                <li>Harmful algal blooms (HABs) and freshwater toxicology</li>
+                <li>Elemental stoichiometry and nutrient–toxin coupling</li>
+                <li>Environmental stressors and physiological trade-offs in phytoplankton</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Methods and Approaches</h2>
+            <ul>
+                <li>Controlled laboratory experiments with cyanobacteria</li>
+                <li>Growth and toxin quantification (OD₇₅₀ assays, microcystin ELISA)</li>
+                <li>Elemental profiling using ICP-OES (ionomics)</li>
+                <li>RNA-based molecular techniques and transcriptomic analyses</li>
+                <li>Advanced statistical and multivariate modeling in R</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Manuscripts in Preparation</h2>
+            <ul>
+                <li>
+                    Biswas, A., Minghetti, M., Belden, J., &amp; Jeyasingh, P.
+                    <em>Role of sulfur availability in regulating microcystin production</em>.
+                    (In preparation)
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    Pandey, S., Sharma, V. K., <strong>Biswas, A.</strong>, Lahiri, M., &amp; Basu, S.
+                    (2021). Small molecule-mediated induction of endoplasmic reticulum stress in cancer cells.
+                    <em>RSC Medicinal Chemistry</em>, 12(9), 1604–1611.
+                </li>
+                <li>
+                    Sharma, A., Baraiya, R., Prakash, S., <strong>Biswas, A.</strong>, Chowdhury, B., &amp; Sharma, A.
+                    (2025). Anti-inflammatory potential of fish-derived bioactive peptides.
+                    <em>Comprehensive Reviews in Food Science and Food Safety</em>, 24(4).
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conference Presentations</h2>
+            <ul>
+                <li>
+                    Biswas, A., Belden, J., &amp; Jeyasingh, D. P. (2025).
+                    <em>Have we overlooked the role of sulfur in microcystin production?</em>
+                    Oklahoma Clean Lakes and Watersheds Association Annual Conference, Stillwater, OK.
+                </li>
+                <li>
+                    Biswas, A., Belden, J., &amp; Jeyasingh, D. P. (2024).
+                    <em>Have we overlooked the role of sulfur availability in microcystin production?</em>
+                    Great Plains Limnology Conference, Omaha, NE.
+                </li>
+                <li>
+                    <strong>Invited Presentation</strong> — Biswas, A., Belden, J., &amp; Jeyasingh, D. P. (2025).
+                    Integrative Biology Research Symposium, Oklahoma State University.
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
