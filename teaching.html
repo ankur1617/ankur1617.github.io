@@ -5,14 +5,11 @@
 <title>Teaching | Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-/* =====================
-   GLOBAL
-===================== */
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -23,7 +20,7 @@ a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* =====================
-   TOP BAR — SAME AS HOME & RESEARCH
+   TOP BAR – SHARED
 ===================== */
 .topbar {
     position: relative;
@@ -35,18 +32,53 @@ a:hover { text-decoration: underline; }
     border-bottom: 1px solid #c9bfae;
     background-color: #f7f1e3;
 }
+
+/* Bengali name — desktop (left) */
 .bengali-top {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 nav a {
-    margin-left: 30px;
     font-weight: 700;
     font-size: 15px;
+}
+
+/* =====================
+   MOBILE TOPBAR
+===================== */
+@media (max-width: 900px) {
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+    .bengali-top {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+    }
 }
 
 /* =====================
@@ -58,20 +90,18 @@ nav a {
     min-height: calc(100vh - 70px);
 }
 
-/* =====================
-   LEFT PANEL (DESKTOP)
-===================== */
+/* LEFT PANEL – DESKTOP ONLY */
 .left-panel {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: top center;
 }
 .left-panel::before {
     content: "";
     position: absolute;
-    inset: 16px;
-    border: 2px solid rgba(255,255,255,0.35);
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
 }
 .left-panel::after {
     content: "";
@@ -80,53 +110,56 @@ nav a {
     background: rgba(0,0,0,0.55);
 }
 
-/* =====================
-   RIGHT PANEL
-===================== */
+/* RIGHT PANEL */
 .right-panel {
-    padding: 90px 110px;
+    padding: 64px 110px 80px 110px;
 }
 
-/* PAGE HEADER — IDENTICAL TO RESEARCH */
-.page-title {
+/* HEADER – SAME AS RESEARCH */
+.name-en {
     font-size: 38px;
     font-weight: 700;
     color: #083a6b;
     margin-bottom: 6px;
 }
-.title-rule {
+.rule-thick {
     height: 3px;
     background-color: #083a6b;
-    width: 100%;
+    margin-bottom: 4px;
+}
+.rule-thin {
+    height: 1px;
+    background-color: #083a6b;
     margin-bottom: 28px;
 }
 
-/* CONTENT */
-section {
-    margin-bottom: 60px;
+/* TEXT */
+.main-text {
+    line-height: 1.95;
+    margin-bottom: 18px;
 }
-h2 {
-    font-size: 22px;
+
+/* SECTION HEADERS */
+.section-bar {
+    margin-top: 40px;
+    margin-bottom: 14px;
+    padding: 6px 0;
+    border-top: 1px solid #c9bfae;
     border-bottom: 1px solid #c9bfae;
-    padding-bottom: 6px;
+    font-weight: 700;
     color: #4a5f73;
 }
-p { line-height: 1.9; }
-ul { padding-left: 18px; }
-li { margin-bottom: 12px; }
 
-/* =====================
-   RESPONSIVE (MOBILE)
-===================== */
+/* MOBILE – TEXT ONLY */
 @media (max-width: 1000px) {
     .layout {
         grid-template-columns: 1fr;
     }
     .left-panel {
-        min-height: 360px;
+        display: none;
     }
     .right-panel {
-        padding: 50px 30px;
+        padding: 48px 36px;
     }
 }
 </style>
@@ -151,51 +184,43 @@ li { margin-bottom: 12px; }
 
     <main class="right-panel">
 
-        <div class="page-title">Teaching</div>
-        <div class="title-rule"></div>
+        <div class="name-en">Teaching</div>
+        <div class="rule-thick"></div>
+        <div class="rule-thin"></div>
 
-        <section>
-            <h2>Teaching Philosophy</h2>
-            <p>
-                I view teaching as a process of guiding students toward conceptual clarity,
-                quantitative reasoning, and scientific confidence. I emphasize structured instruction,
-                active engagement, and the integration of real-world ecological and environmental
-                examples into the classroom.
-            </p>
-            <p>
-                As a graduate teaching assistant, I strive to foster an inclusive learning environment
-                where students feel supported and encouraged to develop analytical independence.
-            </p>
-        </section>
+        <div class="section-bar">Teaching Philosophy</div>
+        <div class="main-text">
+            I view teaching as a process of guiding students toward conceptual clarity,
+            quantitative reasoning, and scientific confidence. I emphasize structured instruction,
+            active engagement, and the integration of real-world ecological and environmental
+            examples into the classroom.
+        </div>
 
-        <section>
-            <h2>Teaching Experience</h2>
-            <ul>
-                <li>
-                    <strong>Graduate Teaching Assistant</strong>, Oklahoma State University<br>
-                    Undergraduate Biology and Ecology Laboratories (2023–Present)
-                </li>
-            </ul>
-        </section>
+        <div class="main-text">
+            As a graduate teaching assistant, I strive to foster an inclusive learning environment
+            where students feel supported and encouraged to develop analytical independence.
+        </div>
 
-        <section>
-            <h2>Courses Assisted</h2>
-            <ul>
-                <li>Introductory Biology Laboratory</li>
-                <li>General Ecology Laboratory</li>
-                <li>Environmental Biology Laboratory</li>
-            </ul>
-        </section>
+        <div class="section-bar">Teaching Experience</div>
+        <div class="main-text">
+            <strong>Graduate Teaching Assistant</strong>, Oklahoma State University<br>
+            Undergraduate Biology and Ecology Laboratories (2023–Present)
+        </div>
 
-        <section>
-            <h2>Pedagogical Interests</h2>
-            <ul>
-                <li>Concept-driven and inquiry-based learning</li>
-                <li>Integrating quantitative reasoning into biology education</li>
-                <li>Mentoring undergraduate researchers</li>
-                <li>Inclusive and accessible laboratory instruction</li>
-            </ul>
-        </section>
+        <div class="section-bar">Courses Assisted</div>
+        <div class="main-text">
+            • Introductory Biology Laboratory<br>
+            • General Ecology Laboratory<br>
+            • Environmental Biology Laboratory
+        </div>
+
+        <div class="section-bar">Pedagogical Interests</div>
+        <div class="main-text">
+            • Concept-driven and inquiry-based learning<br>
+            • Integrating quantitative reasoning into biology education<br>
+            • Mentoring undergraduate researchers<br>
+            • Inclusive and accessible laboratory instruction
+        </div>
 
     </main>
 </div>
