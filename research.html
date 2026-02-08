@@ -5,21 +5,131 @@
 <title>Research | Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
-<!-- SAME CSS AS HOME (DO NOT CHANGE PATHS) -->
-<link rel="stylesheet" href="css/mainstyle.css">
-<link rel="stylesheet" href="css/navigation.css">
-<link rel="stylesheet" href="css/sidenav.css">
-<link rel="stylesheet" href="css/mode.css">
+<style>
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f7f1e3;
+    color: #1e1e1e;
+}
+a { color: #083a6b; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
+/* TOP BAR – SAME AS HOME */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    border-bottom: 1px solid #c9bfae;
+}
+.bengali-top {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+nav a {
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+/* LAYOUT – MATCH HOME */
+.layout {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    min-height: calc(100vh - 70px);
+}
+
+/* LEFT PANEL – BACKGROUND ONLY */
+.left-panel {
+    position: relative;
+    background-image: url("Pictures/Double Tribal.jpeg");
+    background-size: cover;
+    background-position: top center;
+}
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+.left-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    padding: 64px 110px 80px 110px;
+}
+
+/* TITLE – SAME STYLE AS HOME */
+.name-en {
+    font-size: 38px;
+    font-weight: 700;
+    color: #083a6b;
+    margin-bottom: 6px;
+}
+.rule-thick {
+    height: 3px;
+    background-color: #083a6b;
+    margin-bottom: 4px;
+}
+.rule-thin {
+    height: 1px;
+    background-color: #083a6b;
+    margin-bottom: 28px;
+}
+
+/* TEXT */
+.main-text {
+    line-height: 1.95;
+    margin-bottom: 18px;
+}
+
+/* SECTION HEADERS – SAME AS HOME */
+.section-bar {
+    margin-top: 40px;
+    margin-bottom: 14px;
+    padding: 6px 0;
+    border-top: 1px solid #c9bfae;
+    border-bottom: 1px solid #c9bfae;
+    font-weight: 700;
+    color: #4a5f73;
+}
+
+/* LISTS */
+ul {
+    padding-left: 18px;
+}
+li {
+    margin-bottom: 12px;
+}
+
+/* MOBILE – TEXT ONLY */
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .left-panel {
+        display: none;
+    }
+    .right-panel {
+        padding: 48px 36px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- TOP BAR (IDENTICAL TO HOME) -->
+<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -29,16 +139,12 @@
     </nav>
 </div>
 
-<!-- MAIN LAYOUT (IDENTICAL GRID) -->
+<!-- MAIN LAYOUT -->
 <div class="layout">
 
-    <!-- LEFT PANEL (BACKGROUND ONLY, NO PORTRAIT) -->
-    <div class="left-panel">
-        <!-- intentionally empty: background + overlay still apply -->
-    </div>
+    <aside class="left-panel"></aside>
 
-    <!-- RIGHT CONTENT -->
-    <div class="right-panel">
+    <main class="right-panel">
 
         <div class="name-en">Research</div>
         <div class="rule-thick"></div>
@@ -51,7 +157,7 @@
             toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
         </div>
 
-        <div class="main-text" style="margin-top:16px;">
+        <div class="main-text">
             My doctoral work integrates physiological measurements, ionomics, and gene expression
             analyses to identify mechanistic controls on microcystin biosynthesis in
             <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
@@ -101,7 +207,7 @@
             • Advanced statistical modeling and visualization in R
         </div>
 
-    </div>
+    </main>
 </div>
 
 </body>
