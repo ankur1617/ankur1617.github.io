@@ -9,18 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
+/* =====================
+   GLOBAL
+===================== */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
     background-color: #f7f1e3;
     color: #1e1e1e;
 }
+
 a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* =====================
-   TOP BAR – SHARED
+   TOP BAR – SAME AS HOME
 ===================== */
 .topbar {
     position: relative;
@@ -33,7 +36,6 @@ a:hover { text-decoration: underline; }
     background-color: #f7f1e3;
 }
 
-/* Bengali name — DESKTOP default (left) */
 .bengali-top {
     position: absolute;
     left: 40px;
@@ -45,31 +47,24 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
 }
 
-/* Navigation */
 nav {
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 
 nav a {
     font-weight: 700;
     font-size: 15px;
-    color: #083a6b;
 }
 
-/* =====================
-   MOBILE OVERRIDE
-===================== */
+/* MOBILE NAV */
 @media (max-width: 900px) {
-
     .topbar {
         justify-content: center;
         flex-wrap: wrap;
         padding: 14px 20px;
     }
 
-    /* Bengali name — centered on mobile */
     .bengali-top {
         position: relative;
         left: auto;
@@ -87,27 +82,30 @@ nav a {
     }
 }
 
-
-/* LAYOUT – MATCH HOME */
+/* =====================
+   LAYOUT
+===================== */
 .layout {
     display: grid;
     grid-template-columns: 25% 75%;
     min-height: calc(100vh - 70px);
 }
 
-/* LEFT PANEL – BACKGROUND ONLY */
+/* LEFT PANEL */
 .left-panel {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: top center;
 }
+
 .left-panel::before {
     content: "";
     position: absolute;
     inset: 14px;
     border: 1px solid rgba(255,255,255,0.35);
 }
+
 .left-panel::after {
     content: "";
     position: absolute;
@@ -120,34 +118,36 @@ nav a {
     padding: 64px 110px 80px 110px;
 }
 
-/* TITLE – SAME STYLE AS HOME */
+/* PAGE TITLE */
 .name-en {
     font-size: 38px;
     font-weight: 700;
     color: #083a6b;
     margin-bottom: 6px;
 }
+
 .rule-thick {
     height: 3px;
     background-color: #083a6b;
     margin-bottom: 4px;
 }
+
 .rule-thin {
     height: 1px;
     background-color: #083a6b;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
-/* TEXT */
+/* TEXT — MATCH HOME */
 .main-text {
     line-height: 1.95;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
-/* SECTION HEADERS – SAME AS HOME */
+/* SECTION HEADERS — MATCH HOME */
 .section-bar {
-    margin-top: 40px;
-    margin-bottom: 14px;
+    margin-top: 36px;
+    margin-bottom: 12px;
     padding: 6px 0;
     border-top: 1px solid #c9bfae;
     border-bottom: 1px solid #c9bfae;
@@ -155,32 +155,17 @@ nav a {
     color: #4a5f73;
 }
 
-/* LISTS */
-ul {
-    padding-left: 18px;
-}
-li {
-    margin-bottom: 12px;
-}
-
-/* MOBILE – TEXT ONLY */
+/* MOBILE CONTENT */
 @media (max-width: 1000px) {
-    .layout {
-        grid-template-columns: 1fr;
-    }
-    .left-panel {
-        display: none;
-    }
-    .right-panel {
-        padding: 48px 36px;
-    }
+    .layout { grid-template-columns: 1fr; }
+    .left-panel { display: none; }
+    .right-panel { padding: 48px 36px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -190,75 +175,35 @@ li {
     </nav>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="layout">
 
-    <aside class="left-panel"></aside>
+<aside class="left-panel"></aside>
 
-    <main class="right-panel">
+<main class="right-panel">
 
-        <div class="name-en">Research</div>
-        <div class="rule-thick"></div>
-        <div class="rule-thin"></div>
+<div class="name-en">Research</div>
+<div class="rule-thick"></div>
+<div class="rule-thin"></div>
 
-        <div class="main-text">
-            My research focuses on understanding how elemental nutrient availability—particularly sulfur—
-            regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
-            I work at the interface of ecological stoichiometry, molecular biology, and environmental
-            toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
-        </div>
+<div class="main-text">
+My research focuses on understanding how elemental nutrient availability—particularly sulfur—
+regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
+</div>
 
-        <div class="main-text">
-            My doctoral work integrates physiological measurements, ionomics, and gene expression
-            analyses to identify mechanistic controls on microcystin biosynthesis in
-            <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
-        </div>
+<div class="main-text">
+My doctoral work integrates physiological measurements, ionomics, and gene expression analyses
+to identify mechanistic controls on microcystin biosynthesis in <em>Microcystis aeruginosa</em>.
+</div>
 
-        <div class="section-bar">Current Research Themes</div>
-        <div class="main-text">
-            • Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria<br>
-            • Harmful algal blooms (HABs) and freshwater toxicology<br>
-            • Elemental stoichiometry and nutrient–toxin coupling<br>
-            • Environmental stressors and physiological trade-offs in phytoplankton
-        </div>
+<div class="section-bar">Current Research Themes</div>
+<div class="main-text">
+• Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria<br>
+• Harmful algal blooms (HABs) and freshwater toxicology<br>
+• Elemental stoichiometry and nutrient–toxin coupling<br>
+• Environmental stressors and physiological trade-offs in phytoplankton
+</div>
 
-        <div class="section-bar">Manuscripts and Publications</div>
-        <div class="main-text">
-            <strong>Biswas, A.</strong>, Jeyasingh, P. D., &amp; Belden, J. B.<br>
-            <em>Sulfur availability regulates microcystin production through elemental and molecular constraints in
-            <span style="font-style: italic;">Microcystis aeruginosa</span>.</em><br>
-            (Manuscript in preparation)
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al.<br>
-            <em>Stoichiometric controls on cyanotoxin production under nutrient stress.</em><br>
-            (Planned submission)
-        </div>
-
-        <div class="section-bar">Conference Presentations and Posters</div>
-        <div class="main-text">
-            <strong>Biswas, A.</strong>, et al. — Society of Toxicology (SOT)<br>
-            <em>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</em>
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al. — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
-            <em>Elemental constraints on harmful algal bloom toxicity.</em>
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al. — Integrative Biology Symposium (IBiS), Oklahoma State University<br>
-            <em>Linking sulfur stoichiometry to cyanobacterial toxin production.</em>
-        </div>
-
-        <div class="section-bar">Methods and Approaches</div>
-        <div class="main-text">
-            • Controlled laboratory experiments with cyanobacteria<br>
-            • Microcystin quantification (ELISA)<br>
-            • Elemental profiling using ICP-OES (ionomics)<br>
-            • RNA-based molecular and transcriptomic analyses<br>
-            • Advanced statistical modeling and visualization in R
-        </div>
-
-    </main>
+</main>
 </div>
 
 </body>
