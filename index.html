@@ -36,12 +36,12 @@ a:hover { text-decoration: underline; }
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 12px 40px; /* reduced vertical padding */
+    padding: 12px 40px;
     border-bottom: 1px solid #c9bfae;
     background-color: #f7f1e3;
 }
 
-/* Bengali name (default: centered — mobile) */
+/* Bengali name */
 .bengali-top {
     position: absolute;
     left: 50%;
@@ -52,6 +52,11 @@ a:hover { text-decoration: underline; }
 }
 
 /* NAV */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav a {
     margin-left: 30px;
     font-weight: 700;
@@ -107,6 +112,7 @@ nav a {
     padding: 5px;
     background: #111;
 }
+
 .portrait img {
     width: 100%;
     display: block;
@@ -115,14 +121,14 @@ nav a {
 /* RIGHT PANEL */
 .right-panel {
     margin-left: 25%;
-    padding: 52px 110px 80px 110px; /* reduced top padding */
+    padding: 52px 110px 80px 110px;
 }
 
 .name-en {
     font-size: 38px;
     font-weight: 700;
     color: #0a4a82;
-    margin-bottom: 4px; /* tighter spacing */
+    margin-bottom: 4px;
 }
 
 .rule-thick {
@@ -131,6 +137,7 @@ nav a {
     width: 100%;
     margin-bottom: 4px;
 }
+
 .rule-thin {
     height: 1px;
     background-color: #0a4a82;
@@ -139,7 +146,7 @@ nav a {
 }
 
 .main-text {
-    line-height: 1.95;
+    line-height: 1.65;
 }
 
 .section-bar {
@@ -153,11 +160,35 @@ nav a {
 }
 
 /* =====================
-   MOBILE / SMALL SCREENS
+   MOBILE FIXES (ONLY)
 ===================== */
 @media (max-width: 1000px) {
 
-    /* KEEP MOBILE AS-IS */
+    /* Topbar stacks cleanly */
+    .topbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 14px 20px;
+    }
+
+    .bengali-top {
+        position: relative;
+        left: auto;
+        transform: none;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 16px;
+    }
+
+    /* Layout */
     .layout {
         grid-template-columns: 1fr;
     }
@@ -165,31 +196,28 @@ nav a {
     .left-panel {
         position: relative;
         width: 100%;
-        height: 360px;
+        height: 320px;
+    }
+
+    .left-inner {
+        padding-top: 40px;
+    }
+
+    .portrait {
+        width: 58%;
     }
 
     .right-panel {
         margin-left: 0;
-        padding: 48px 36px;
-    }
-
-    .portrait {
-        width: 70%;
-    }
-
-    /* Bengali name stays centered on mobile */
-    .bengali-top {
-        left: 50%;
-        transform: translateX(-50%);
+        padding: 42px 28px;
     }
 }
 
 /* =====================
-   DESKTOP-ONLY ADJUSTMENTS
+   DESKTOP-ONLY
 ===================== */
 @media (min-width: 1001px) {
 
-    /* Bengali name to top-left on desktop */
     .bengali-top {
         left: 40px;
         transform: none;
