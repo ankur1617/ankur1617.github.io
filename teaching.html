@@ -5,6 +5,7 @@
 <title>Teaching | Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
@@ -18,11 +19,14 @@ body {
     background-color: #f7f1e3;
     color: #1e1e1e;
 }
-a { color: #083a6b; text-decoration: none; }
+a {
+    color: #083a6b;
+    text-decoration: none;
+}
 a:hover { text-decoration: underline; }
 
 /* =====================
-   TOP BAR (SAME AS HOME / RESEARCH)
+   TOP BAR – SAME AS HOME / RESEARCH
 ===================== */
 .topbar {
     position: relative;
@@ -35,23 +39,18 @@ a:hover { text-decoration: underline; }
     background-color: #f7f1e3;
 }
 
+/* Bengali name (centered on mobile, shifted via media queries elsewhere if needed) */
 .bengali-top {
     position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
-    white-space: nowrap;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
 nav a {
+    margin-left: 30px;
     font-weight: 700;
     font-size: 15px;
 }
@@ -65,7 +64,9 @@ nav a {
     min-height: calc(100vh - 70px);
 }
 
-/* LEFT PANEL */
+/* =====================
+   LEFT PANEL (DESKTOP ONLY)
+===================== */
 .left-panel {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
@@ -85,86 +86,64 @@ nav a {
     background: rgba(0,0,0,0.55);
 }
 
-/* RIGHT PANEL */
+/* =====================
+   RIGHT PANEL
+===================== */
 .right-panel {
     padding: 90px 110px;
 }
 
-/* PAGE TITLE */
+/* PAGE HEADER — MATCHES RESEARCH EXACTLY */
 .page-title {
-    text-align: center;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 700;
     color: #083a6b;
+    margin-bottom: 6px;
 }
 
 .title-rule {
-    width: 220px;
-    height: 4px;
+    width: 100%;
+    height: 3px;
     background-color: #083a6b;
-    margin: 20px auto 60px;
+    margin-bottom: 28px;
 }
 
-/* TEXT */
-.main-text {
-    line-height: 1.9;
+/* CONTENT */
+section {
+    margin-bottom: 60px;
 }
 
-/* SECTION BAR — SAME AS RESEARCH */
-.section-bar {
-    margin-top: 50px;
-    margin-bottom: 16px;
-    padding: 6px 0;
-    border-top: 1px solid #c9bfae;
+h2 {
+    font-size: 22px;
     border-bottom: 1px solid #c9bfae;
-    font-weight: 700;
+    padding-bottom: 6px;
     color: #4a5f73;
+}
+
+p {
+    line-height: 1.9;
 }
 
 ul {
     padding-left: 18px;
 }
+
 li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* =====================
-   MOBILE
+   RESPONSIVE (MOBILE)
 ===================== */
-@media (max-width: 900px) {
-
-    .topbar {
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 14px 20px;
-    }
-
-    .bengali-top {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 6px;
-    }
-
-    nav {
-        width: 100%;
-        justify-content: center;
-        gap: 24px;
-    }
-
+@media (max-width: 1000px) {
     .layout {
         grid-template-columns: 1fr;
     }
-
     .left-panel {
-        display: none;
+        min-height: 360px;
     }
-
     .right-panel {
-        padding: 48px 30px;
+        padding: 50px 30px;
     }
 }
 </style>
@@ -192,8 +171,8 @@ li {
         <div class="page-title">Teaching</div>
         <div class="title-rule"></div>
 
-        <div class="main-text">
-            <div class="section-bar">Teaching Philosophy</div>
+        <section>
+            <h2>Teaching Philosophy</h2>
             <p>
                 I view teaching as a process of guiding students toward conceptual clarity,
                 quantitative reasoning, and scientific confidence. I emphasize structured instruction,
@@ -204,30 +183,36 @@ li {
                 As a graduate teaching assistant, I strive to foster an inclusive learning environment
                 where students feel supported and encouraged to develop analytical independence.
             </p>
+        </section>
 
-            <div class="section-bar">Teaching Experience</div>
+        <section>
+            <h2>Teaching Experience</h2>
             <ul>
                 <li>
                     <strong>Graduate Teaching Assistant</strong>, Oklahoma State University<br>
                     Undergraduate Biology and Ecology Laboratories (2023–Present)
                 </li>
             </ul>
+        </section>
 
-            <div class="section-bar">Courses Assisted</div>
+        <section>
+            <h2>Courses Assisted</h2>
             <ul>
                 <li>Introductory Biology Laboratory</li>
                 <li>General Ecology Laboratory</li>
                 <li>Environmental Biology Laboratory</li>
             </ul>
+        </section>
 
-            <div class="section-bar">Pedagogical Interests</div>
+        <section>
+            <h2>Pedagogical Interests</h2>
             <ul>
                 <li>Concept-driven and inquiry-based learning</li>
                 <li>Integrating quantitative reasoning into biology education</li>
                 <li>Mentoring undergraduate researchers</li>
                 <li>Inclusive and accessible laboratory instruction</li>
             </ul>
-        </div>
+        </section>
 
     </main>
 </div>
