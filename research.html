@@ -19,27 +19,74 @@ body {
 a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* TOP BAR – SAME AS HOME */
+/* =====================
+   TOP BAR – SHARED
+===================== */
 .topbar {
     position: relative;
     z-index: 10;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 12px 40px; /* reduced vertical padding */
+    padding: 12px 40px;
     border-bottom: 1px solid #c9bfae;
     background-color: #f7f1e3;
 }
 
-/* Bengali name (default: centered — mobile) */
+/* Bengali name — DESKTOP default (left) */
 .bengali-top {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
+    white-space: nowrap;
 }
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    font-weight: 700;
+    font-size: 15px;
+    color: #083a6b;
+}
+
+/* =====================
+   MOBILE OVERRIDE
+===================== */
+@media (max-width: 900px) {
+
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    /* Bengali name — centered on mobile */
+    .bengali-top {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+    }
+}
+
 
 /* LAYOUT – MATCH HOME */
 .layout {
