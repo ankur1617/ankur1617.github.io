@@ -22,7 +22,7 @@ a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* =====================
-   TOP BAR – SAME AS HOME & RESEARCH
+   TOP BAR (SAME AS HOME / RESEARCH)
 ===================== */
 .topbar {
     position: relative;
@@ -35,7 +35,6 @@ a:hover { text-decoration: underline; }
     background-color: #f7f1e3;
 }
 
-/* Bengali name — desktop (left) */
 .bengali-top {
     position: absolute;
     left: 40px;
@@ -47,7 +46,6 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
 }
 
-/* Navigation */
 nav {
     display: flex;
     align-items: center;
@@ -92,6 +90,7 @@ nav a {
     padding: 90px 110px;
 }
 
+/* PAGE TITLE */
 .page-title {
     text-align: center;
     font-size: 34px;
@@ -106,17 +105,28 @@ nav a {
     margin: 20px auto 60px;
 }
 
-section { margin-bottom: 60px; }
-
-h2 {
-    font-size: 22px;
-    border-bottom: 1px solid #c9bfae;
-    padding-bottom: 6px;
+/* TEXT */
+.main-text {
+    line-height: 1.9;
 }
 
-p { line-height: 1.8; }
-ul { padding-left: 18px; }
-li { margin-bottom: 10px; }
+/* SECTION BAR — SAME AS RESEARCH */
+.section-bar {
+    margin-top: 50px;
+    margin-bottom: 16px;
+    padding: 6px 0;
+    border-top: 1px solid #c9bfae;
+    border-bottom: 1px solid #c9bfae;
+    font-weight: 700;
+    color: #4a5f73;
+}
+
+ul {
+    padding-left: 18px;
+}
+li {
+    margin-bottom: 10px;
+}
 
 /* =====================
    MOBILE
@@ -129,7 +139,6 @@ li { margin-bottom: 10px; }
         padding: 14px 20px;
     }
 
-    /* Bengali name — centered on mobile */
     .bengali-top {
         position: relative;
         left: auto;
@@ -151,11 +160,11 @@ li { margin-bottom: 10px; }
     }
 
     .left-panel {
-        min-height: 360px;
+        display: none;
     }
 
     .right-panel {
-        padding: 50px 30px;
+        padding: 48px 30px;
     }
 }
 </style>
@@ -183,8 +192,8 @@ li { margin-bottom: 10px; }
         <div class="page-title">Teaching</div>
         <div class="title-rule"></div>
 
-        <section>
-            <h2>Teaching Philosophy</h2>
+        <div class="main-text">
+            <div class="section-bar">Teaching Philosophy</div>
             <p>
                 I view teaching as a process of guiding students toward conceptual clarity,
                 quantitative reasoning, and scientific confidence. I emphasize structured instruction,
@@ -195,36 +204,30 @@ li { margin-bottom: 10px; }
                 As a graduate teaching assistant, I strive to foster an inclusive learning environment
                 where students feel supported and encouraged to develop analytical independence.
             </p>
-        </section>
 
-        <section>
-            <h2>Teaching Experience</h2>
+            <div class="section-bar">Teaching Experience</div>
             <ul>
                 <li>
                     <strong>Graduate Teaching Assistant</strong>, Oklahoma State University<br>
                     Undergraduate Biology and Ecology Laboratories (2023–Present)
                 </li>
             </ul>
-        </section>
 
-        <section>
-            <h2>Courses Assisted</h2>
+            <div class="section-bar">Courses Assisted</div>
             <ul>
                 <li>Introductory Biology Laboratory</li>
                 <li>General Ecology Laboratory</li>
                 <li>Environmental Biology Laboratory</li>
             </ul>
-        </section>
 
-        <section>
-            <h2>Pedagogical Interests</h2>
+            <div class="section-bar">Pedagogical Interests</div>
             <ul>
                 <li>Concept-driven and inquiry-based learning</li>
                 <li>Integrating quantitative reasoning into biology education</li>
                 <li>Mentoring undergraduate researchers</li>
                 <li>Inclusive and accessible laboratory instruction</li>
             </ul>
-        </section>
+        </div>
 
     </main>
 </div>
