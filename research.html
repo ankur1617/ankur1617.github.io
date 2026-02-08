@@ -21,19 +21,23 @@ a:hover { text-decoration: underline; }
 
 /* TOP BAR – SAME AS HOME */
 .topbar {
+    position: relative;
+    z-index: 10;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 12px 40px;
+    padding: 12px 40px; /* reduced vertical padding */
     border-bottom: 1px solid #c9bfae;
+    background-color: #f7f1e3;
 }
+
+/* Bengali name (default: centered — mobile) */
 .bengali-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
-    font-weight: 700;
-}
-nav a {
-    margin-left: 30px;
     font-weight: 700;
 }
 
