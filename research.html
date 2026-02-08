@@ -5,112 +5,17 @@
 <title>Research | Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Libre Baskerville', serif;
-    background-color: #f7f1e3;
-    color: #1e1e1e;
-}
-a { color: #083a6b; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* TOP BAR */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 40px;
-    border-bottom: 1px solid #c9bfae;
-}
-.bengali-top {
-    font-family: 'Noto Serif Bengali', serif;
-    font-size: 22px;
-    font-weight: 700;
-}
-nav a { margin-left: 24px; font-weight: 600; }
-
-/* LAYOUT */
-.layout {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    min-height: calc(100vh - 70px);
-}
-
-/* LEFT PANEL */
-.left-panel {
-    position: relative;
-    background-image: url("Pictures/Double Tribal.jpeg");
-    background-size: cover;
-    background-position: center;
-}
-.left-panel::before {
-    content: "";
-    position: absolute;
-    inset: 16px;
-    border: 2px solid rgba(255,255,255,0.35);
-}
-.left-panel::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-}
-
-/* RIGHT PANEL */
-.right-panel {
-    padding: 90px 110px;
-}
-
-.page-title {
-    text-align: center;
-    font-size: 34px;
-    font-weight: 700;
-    color: #083a6b;
-}
-
-.title-rule {
-    width: 240px;
-    height: 4px;
-    background-color: #083a6b;
-    margin: 20px auto 60px;
-}
-
-section { margin-bottom: 60px; }
-
-h2 {
-    font-size: 22px;
-    border-bottom: 1px solid #c9bfae;
-    padding-bottom: 6px;
-}
-
-p {
-    line-height: 1.8;
-}
-
-ul {
-    padding-left: 18px;
-}
-
-li {
-    margin-bottom: 12px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1000px) {
-    .layout { grid-template-columns: 1fr; }
-    .left-panel { min-height: 360px; }
-    .right-panel { padding: 50px 30px; }
-}
-</style>
+<!-- Shared site CSS (SAME AS HOME) -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="no-hero">
 
-<!-- TOP BAR -->
+<!-- TOP BAR (IDENTICAL TO HOME) -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -120,100 +25,76 @@ li {
     </nav>
 </div>
 
-<!-- MAIN LAYOUT -->
-<div class="layout">
+<!-- MAIN CONTENT (TEXT ONLY) -->
+<div class="right-panel full-width">
 
-    <aside class="left-panel"></aside>
+    <!-- PAGE TITLE -->
+    <div class="name-en">Research</div>
+    <div class="rule-thick"></div>
+    <div class="rule-thin"></div>
 
-    <main class="right-panel">
+    <!-- OVERVIEW -->
+    <div class="main-text">
+        My research focuses on understanding how elemental nutrient availability—particularly sulfur—
+        regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
+        I work at the interface of ecological stoichiometry, molecular biology, and environmental
+        toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
 
-        <div class="page-title">Research</div>
-        <div class="title-rule"></div>
+        My doctoral work integrates physiological measurements, ionomics, and gene expression
+        analyses to identify mechanistic controls on microcystin biosynthesis in
+        <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
+    </div>
 
-        <!-- OVERVIEW -->
-        <section>
-            <h2>Research Overview</h2>
-            <p>
-                My research focuses on understanding how elemental nutrient availability—particularly sulfur—
-                regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
-                I work at the interface of ecological stoichiometry, molecular biology, and environmental
-                toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
-            </p>
-            <p>
-                My doctoral work integrates physiological measurements, ionomics, and gene expression
-                analyses to identify mechanistic controls on microcystin biosynthesis in
-                <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
-            </p>
-        </section>
+    <!-- THEMES -->
+    <div class="section-bar">Current Research Themes</div>
+    <div class="main-text">
+        • Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria<br>
+        • Harmful algal blooms (HABs) and freshwater toxicology<br>
+        • Elemental stoichiometry and nutrient–toxin coupling<br>
+        • Environmental stressors and physiological trade-offs in phytoplankton
+    </div>
 
-        <!-- THEMES -->
-        <section>
-            <h2>Current Research Themes</h2>
-            <ul>
-                <li>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria</li>
-                <li>Harmful algal blooms (HABs) and freshwater toxicology</li>
-                <li>Elemental stoichiometry and nutrient–toxin coupling</li>
-                <li>Environmental stressors and physiological trade-offs in phytoplankton</li>
-            </ul>
-        </section>
+    <!-- MANUSCRIPTS -->
+    <div class="section-bar">Manuscripts and Publications</div>
+    <div class="main-text">
+        <strong>Biswas, A.</strong>, Jeyasingh, P. D., &amp; Belden, J. B.<br>
+        <em>
+            Sulfur availability regulates microcystin production through elemental and molecular
+            constraints in <span style="font-style: italic;">Microcystis aeruginosa</span>.
+        </em><br>
+        (Manuscript in preparation)
+        <br><br>
 
-        <!-- PAPERS -->
-        <section>
-            <h2>Manuscripts and Publications</h2>
-            <ul>
-                <li>
-                    <strong>Biswas, A.</strong>, Jeyasingh, P. D., &amp; Belden, J. B.
-                    <em>Sulfur availability regulates microcystin production through elemental and molecular constraints in <span style="font-style:italic;">Microcystis aeruginosa</span>.</em>
-                    <br>
-                    <span>(Manuscript in preparation)</span>
-                </li>
+        <strong>Biswas, A.</strong>, et al.<br>
+        <em>Stoichiometric controls on cyanotoxin production under nutrient stress.</em><br>
+        (Planned submission)
+    </div>
 
-                <li>
-                    <strong>Biswas, A.</strong>, et al.
-                    <em>Stoichiometric controls on cyanotoxin production under nutrient stress.</em>
-                    <br>
-                    <span>(Planned submission)</span>
-                </li>
-            </ul>
-        </section>
+    <!-- PRESENTATIONS -->
+    <div class="section-bar">Conference Presentations and Posters</div>
+    <div class="main-text">
+        <strong>Biswas, A.</strong>, et al. — Society of Toxicology (SOT)<br>
+        <em>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</em>
+        <br><br>
 
-        <!-- PRESENTATIONS -->
-        <section>
-            <h2>Conference Presentations and Posters</h2>
-            <ul>
-                <li>
-                    <strong>Biswas, A.</strong>, et al.  
-                    <em>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</em>  
-                    Society of Toxicology (SOT) Annual Meeting.
-                </li>
+        <strong>Biswas, A.</strong>, et al. — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
+        <em>Elemental constraints on harmful algal bloom toxicity.</em>
+        <br><br>
 
-                <li>
-                    <strong>Biswas, A.</strong>, et al.  
-                    <em>Elemental constraints on harmful algal bloom toxicity.</em>  
-                    Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA).
-                </li>
+        <strong>Biswas, A.</strong>, et al. — Integrative Biology Symposium (IBiS), Oklahoma State University<br>
+        <em>Linking sulfur stoichiometry to cyanobacterial toxin production.</em>
+    </div>
 
-                <li>
-                    <strong>Biswas, A.</strong>, et al.  
-                    <em>Linking sulfur stoichiometry to cyanobacterial toxin production.</em>  
-                    Integrative Biology Symposium (IBiS), Oklahoma State University.
-                </li>
-            </ul>
-        </section>
+    <!-- METHODS -->
+    <div class="section-bar">Methods and Approaches</div>
+    <div class="main-text">
+        • Controlled laboratory experiments with cyanobacteria<br>
+        • Microcystin quantification (ELISA)<br>
+        • Elemental profiling using ICP-OES (ionomics)<br>
+        • RNA-based molecular and transcriptomic analyses<br>
+        • Advanced statistical modeling and visualization in R
+    </div>
 
-        <!-- METHODS -->
-        <section>
-            <h2>Methods and Approaches</h2>
-            <ul>
-                <li>Controlled laboratory experiments with cyanobacteria</li>
-                <li>Microcystin quantification (ELISA)</li>
-                <li>Elemental profiling using ICP-OES (ionomics)</li>
-                <li>RNA-based molecular and transcriptomic analyses</li>
-                <li>Advanced statistical modeling and visualization in R</li>
-            </ul>
-        </section>
-
-    </main>
 </div>
 
 </body>
