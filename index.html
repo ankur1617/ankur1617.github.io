@@ -7,95 +7,281 @@
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/home.css">
+<style>
+
+/* =====================
+   GLOBAL
+===================== */
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f7f1e3;
+    color: #1f1f1f;
+    font-size: 14px;
+}
+
+a {
+    color: #0a4a82;
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* =====================
+   TOP BAR
+===================== */
+.topbar {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px 40px;
+    border-bottom: 1px solid #c9bfae;
+    background-color: #f7f1e3;
+}
+
+.bengali-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+nav a {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* =====================
+   DESKTOP LAYOUT
+===================== */
+.left-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100vh;
+    background-image: url("Pictures/Double Tribal.jpeg");
+    background-size: cover;
+    background-position: top center;
+}
+
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+.left-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.left-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+.portrait {
+    width: 62%;
+    border: 1px solid #c9bfae;
+    padding: 6px;
+    background: #111;
+}
+.portrait img {
+    width: 100%;
+    display: block;
+}
+
+/* =====================
+   RIGHT PANEL
+===================== */
+.right-panel {
+    margin-left: 25%;
+    padding: 70px 110px 80px 110px;
+}
+
+.name-en {
+    font-size: 38px;
+    font-weight: 700;
+    color: #0a4a82;
+    margin-bottom: 6px;
+}
+
+.rule-thick {
+    height: 3px;
+    background-color: #0a4a82;
+    width: 100%;
+    margin-bottom: 4px;
+}
+.rule-thin {
+    height: 1px;
+    background-color: #0a4a82;
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+.main-text {
+    line-height: 1.95;
+}
+
+.section-bar {
+    margin-top: 38px;
+    margin-bottom: 12px;
+    padding: 6px 0;
+    border-top: 1px solid #c9bfae;
+    border-bottom: 1px solid #c9bfae;
+    font-weight: 700;
+    color: #4a5f73;
+}
+
+/* =====================
+   MOBILE & SMALL SCREENS
+===================== */
+@media (max-width: 900px) {
+
+    .topbar {
+        flex-direction: column;
+        padding: 10px 16px;
+    }
+
+    .bengali-top {
+        position: relative;
+        left: auto;
+        transform: none;
+        margin-bottom: 6px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    nav {
+        display: flex;
+        gap: 22px;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .left-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 0 30px;
+    }
+
+    .left-inner {
+        padding-top: 0;
+    }
+
+    .portrait {
+        width: 230px;
+        margin: 0 auto;
+    }
+
+    .right-panel {
+        margin-left: 0;
+        padding: 26px 22px 60px;
+    }
+
+    .name-en {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 18px;
+    }
+
+    .rule-thick,
+    .rule-thin {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-bar {
+        text-align: center;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<header class="topbar">
-    <div class="bengali-name">অঙ্কুর বিশ্বাস</div>
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
-        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
     </nav>
-</header>
+</div>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <div class="profile-box">
+<!-- LEFT / HERO -->
+<div class="left-panel">
+    <div class="left-inner">
+        <div class="portrait">
             <img src="Pictures/Conference Pic.jpeg" alt="Ankur Biswas">
         </div>
-
-        <div class="hero-text">
-            <h1>Ankur Biswas</h1>
-            <div class="hero-lines">
-                <span></span>
-                <span></span>
-            </div>
-            <p class="tagline">
-                Ecological stoichiometry, cyanobacterial toxins, and freshwater biogeochemistry
-            </p>
-        </div>
     </div>
-</section>
+</div>
 
-<!-- MAIN CONTENT -->
-<main class="content">
+<!-- CONTENT -->
+<div class="right-panel">
 
-    <section>
-        <h2>ABOUT</h2>
-        <p>
-            I am a Ph.D. student in Integrative Biology at Oklahoma State University, working at the
-            intersection of ecological stoichiometry, environmental toxicology, and molecular biology.
-            My research focuses on harmful algal blooms (HABs), with particular emphasis on how
-            elemental nutrient availability—especially sulfur—regulates cyanobacterial physiology
-            and toxin production.
-        </p>
-        <p>
-            I received my undergraduate training in India and am broadly interested in bridging
-            atom-level biological processes with ecosystem-scale outcomes. My long-term goal is to
-            develop predictive, mechanistic frameworks for understanding and managing freshwater
-            toxic events under global change.
-        </p>
-    </section>
+    <div class="name-en">Ankur Biswas</div>
+    <div class="rule-thick"></div>
+    <div class="rule-thin"></div>
 
-    <section>
-        <h2>AWARDS AND HONORS</h2>
-        <ul>
-            <li>Burks Research Award — Best Research in Aquatic Sciences (2025)</li>
-            <li>Best Poster Award — Oklahoma Clean Lakes & Watersheds Association (OCLWA)</li>
-            <li>Best Poster Award — Integrative Biology Symposium (IBiS)</li>
-            <li>Graduate Research Recognition, Oklahoma State University</li>
-        </ul>
-    </section>
+    <div class="main-text">
+        I am a Ph.D. student in Integrative Biology at Oklahoma State University, working at the
+        intersection of ecological stoichiometry, environmental toxicology, and molecular biology.
+        My research focuses on harmful algal blooms (HABs), with particular emphasis on how elemental
+        nutrient availability—especially sulfur—regulates cyanobacterial physiology and toxin production.
+        I received my undergraduate training in India and am broadly interested in bridging atom-level
+        biological processes with ecosystem-scale outcomes.
+        My long-term goal is to develop predictive, mechanistic frameworks for understanding and managing
+        freshwater toxic events under global change.
+    </div>
 
-    <section>
-        <h2>SYMPOSIA, CONFERENCES, AND SERVICE</h2>
-        <ul>
-            <li>Organizer, special sessions on nutrient–toxin interactions in aquatic systems</li>
-            <li>Contributor to NSF proposal development (figures and data synthesis)</li>
-            <li>Graduate Teaching Assistant, Biology & Ecology Laboratories</li>
-            <li>Mentor to undergraduate researchers, Oklahoma State University</li>
-            <li>Member, Zoology Graduate Student Society (ZoGSS)</li>
-        </ul>
-    </section>
+    <div class="section-bar">Awards and Honors</div>
+    <div class="main-text">
+        Burks Research Award — Best Research in Aquatic Sciences (2025)<br>
+        Best Poster Award — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
+        Best Poster Award — Integrative Biology Symposium (IBiS)<br>
+        Graduate Research Recognition, Oklahoma State University
+    </div>
 
-    <section>
-        <h2>CONTACT</h2>
-        <p>
-            <strong>Email:</strong> ankur.biswas@okstate.edu<br>
-            <strong>Affiliation:</strong> Oklahoma State University, Stillwater, OK, USA
-        </p>
-    </section>
+    <div class="section-bar">Symposia, Conferences, and Service</div>
+    <div class="main-text">
+        Organizer, special sessions on nutrient–toxin interactions in aquatic systems.<br>
+        Contributor to NSF proposal development through figure design and data synthesis.<br>
+        Graduate Teaching Assistant for undergraduate biology and ecology laboratories.<br>
+        Mentor to undergraduate researchers at Oklahoma State University.<br>
+        Member, Zoology Graduate Student Society (ZoGSS).
+    </div>
 
-</main>
+    <div class="section-bar">Contact</div>
+    <div class="main-text">
+        <strong>Email:</strong>
+        <a href="mailto:ankur.biswas@okstate.edu">ankur.biswas@okstate.edu</a><br>
+        Oklahoma State University, Stillwater, OK, USA
+    </div>
+
+</div>
 
 </body>
 </html>
