@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
+/* =====================
+   GLOBAL
+===================== */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -18,26 +21,53 @@ body {
 a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* =====================
+   TOP BAR – SAME AS HOME & RESEARCH
+===================== */
 .topbar {
+    position: relative;
+    z-index: 10;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 12px 40px;
     border-bottom: 1px solid #c9bfae;
+    background-color: #f7f1e3;
 }
+
+/* Bengali name — desktop (left) */
 .bengali-top {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
+    white-space: nowrap;
 }
-nav a { margin-left: 24px; font-weight: 600; }
 
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav a {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* =====================
+   LAYOUT
+===================== */
 .layout {
     display: grid;
     grid-template-columns: 25% 75%;
     min-height: calc(100vh - 70px);
 }
 
+/* LEFT PANEL */
 .left-panel {
     position: relative;
     background-image: url("Pictures/Double Tribal.jpeg");
@@ -57,15 +87,18 @@ nav a { margin-left: 24px; font-weight: 600; }
     background: rgba(0,0,0,0.55);
 }
 
+/* RIGHT PANEL */
 .right-panel {
     padding: 90px 110px;
 }
+
 .page-title {
     text-align: center;
     font-size: 34px;
     font-weight: 700;
     color: #083a6b;
 }
+
 .title-rule {
     width: 220px;
     height: 4px;
@@ -74,25 +107,63 @@ nav a { margin-left: 24px; font-weight: 600; }
 }
 
 section { margin-bottom: 60px; }
+
 h2 {
     font-size: 22px;
     border-bottom: 1px solid #c9bfae;
     padding-bottom: 6px;
 }
+
 p { line-height: 1.8; }
 ul { padding-left: 18px; }
 li { margin-bottom: 10px; }
 
-@media (max-width: 1000px) {
-    .layout { grid-template-columns: 1fr; }
-    .left-panel { min-height: 360px; }
-    .right-panel { padding: 50px 30px; }
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 900px) {
+
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    /* Bengali name — centered on mobile */
+    .bengali-top {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        min-height: 360px;
+    }
+
+    .right-panel {
+        padding: 50px 30px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -102,6 +173,7 @@ li { margin-bottom: 10px; }
     </nav>
 </div>
 
+<!-- MAIN LAYOUT -->
 <div class="layout">
 
     <aside class="left-panel"></aside>
