@@ -67,7 +67,7 @@ nav a {
     min-height: 100vh;
 }
 
-/* LEFT PANEL — FIXED HEIGHT ON DESKTOP */
+/* LEFT PANEL */
 .left-panel {
     position: fixed;
     top: 0;
@@ -111,6 +111,19 @@ nav a {
 .portrait img {
     width: 100%;
     display: block;
+}
+
+/* ARTIST CREDIT */
+.artist-credit {
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3px;
+    z-index: 3;
+    pointer-events: none;
 }
 
 /* RIGHT PANEL */
@@ -240,6 +253,8 @@ nav a {
             <img src="Pictures/AA.jpeg" alt="Ankur Biswas">
         </div>
     </div>
+
+    <div class="artist-credit">Painted by Manali Mandal</div>
 </div>
 
 <!-- RIGHT CONTENT -->
