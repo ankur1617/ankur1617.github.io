@@ -67,14 +67,13 @@ nav a {
     min-height: 100vh;
 }
 
-/* LEFT PANEL — FIXED */
+/* LEFT PANEL — FIXED HEIGHT ON DESKTOP */
 .left-panel {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 25%;
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: top center;
@@ -102,7 +101,7 @@ nav a {
     padding-top: 60px;
 }
 
-/* PORTRAIT (desktop unchanged) */
+/* PORTRAIT */
 .portrait {
     width: 62%;
     border: 1px solid #c9bfae;
@@ -155,9 +154,31 @@ nav a {
 }
 
 /* =====================
-   MOBILE / SMALL SCREENS
+   MOBILE FIXES ONLY
 ===================== */
 @media (max-width: 1000px) {
+
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    .bengali-top {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
 
     .layout {
         grid-template-columns: 1fr;
@@ -167,7 +188,6 @@ nav a {
         position: relative;
         width: 100%;
         height: 360px;
-        min-height: unset;
     }
 
     .right-panel {
@@ -187,18 +207,12 @@ nav a {
         object-fit: cover;
         object-position: center top;
     }
-
-    .bengali-top {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
 
 /* =====================
-   DESKTOP-ONLY
+   DESKTOP ONLY
 ===================== */
 @media (min-width: 1001px) {
-
     .bengali-top {
         left: 40px;
         transform: none;
