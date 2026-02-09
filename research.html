@@ -87,7 +87,6 @@ nav a {
     }
 }
 
-
 /* LAYOUT – MATCH HOME */
 .layout {
     display: grid;
@@ -113,6 +112,19 @@ nav a {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.55);
+}
+
+/* ARTIST CREDIT – SAME AS HOME */
+.artist-credit {
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3px;
+    z-index: 3;
+    pointer-events: none;
 }
 
 /* RIGHT PANEL */
@@ -192,7 +204,9 @@ li {
 <!-- MAIN LAYOUT -->
 <div class="layout">
 
-    <aside class="left-panel"></aside>
+    <aside class="left-panel">
+        <div class="artist-credit">Painted by Manali Mandal</div>
+    </aside>
 
     <main class="right-panel">
 
