@@ -90,9 +90,15 @@ nav a {
     min-height: calc(100vh - 70px);
 }
 
-/* LEFT PANEL – DESKTOP ONLY */
+/* =====================
+   LEFT PANEL – FIXED FULL HEIGHT
+===================== */
 .left-panel {
-    position: relative;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 25%;
+    height: calc(100vh - 70px);
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: top center;
@@ -110,12 +116,26 @@ nav a {
     background: rgba(0,0,0,0.55);
 }
 
+/* ARTIST CREDIT */
+.artist-credit {
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.3px;
+    z-index: 3;
+    pointer-events: none;
+}
+
 /* RIGHT PANEL */
 .right-panel {
+    margin-left: 25%;
     padding: 52px 110px 80px 110px;
 }
 
-/* HEADER – SAME AS RESEARCH */
+/* HEADER */
 .name-en {
     font-size: 38px;
     font-weight: 700;
@@ -138,7 +158,7 @@ nav a {
     line-height: 1.35;
 }
 
-/* SECTION HEADERS – SAME AS HOME */
+/* SECTION HEADERS */
 .section-bar {
     margin-top: 36px;
     margin-bottom: 12px;
@@ -149,8 +169,9 @@ nav a {
     color: #4a5f73;
 }
 
-
-/* MOBILE – TEXT ONLY */
+/* =====================
+   MOBILE – TEXT ONLY
+===================== */
 @media (max-width: 1000px) {
     .layout {
         grid-template-columns: 1fr;
@@ -159,6 +180,7 @@ nav a {
         display: none;
     }
     .right-panel {
+        margin-left: 0;
         padding: 48px 36px;
     }
 }
@@ -180,7 +202,9 @@ nav a {
 <!-- MAIN LAYOUT -->
 <div class="layout">
 
-    <aside class="left-panel"></aside>
+    <aside class="left-panel">
+        <div class="artist-credit">Painted by Manali Mandal</div>
+    </aside>
 
     <main class="right-panel">
 
