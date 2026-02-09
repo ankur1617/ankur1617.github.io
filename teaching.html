@@ -20,7 +20,7 @@ a { color: #083a6b; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* =====================
-   TOP BAR – SHARED
+   TOP BAR
 ===================== */
 .topbar {
     position: relative;
@@ -33,7 +33,6 @@ a:hover { text-decoration: underline; }
     background-color: #f7f1e3;
 }
 
-/* Bengali name — desktop (left) */
 .bengali-top {
     position: absolute;
     left: 40px;
@@ -45,10 +44,8 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
 }
 
-/* Navigation */
 nav {
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 nav a {
@@ -67,9 +64,9 @@ nav a {
     }
     .bengali-top {
         position: relative;
+        transform: none;
         left: auto;
         top: auto;
-        transform: none;
         width: 100%;
         text-align: center;
         margin-bottom: 6px;
@@ -91,18 +88,16 @@ nav a {
 }
 
 /* =====================
-   LEFT PANEL – FIXED FULL HEIGHT
+   LEFT PANEL (FIXED CORRECTLY)
 ===================== */
 .left-panel {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 25%;
-    height: calc(100vh - 70px);
+    position: relative;
+    min-height: 100vh;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: top center;
 }
+
 .left-panel::before {
     content: "";
     position: absolute;
@@ -124,18 +119,17 @@ nav a {
     font-size: 12px;
     font-style: italic;
     color: rgba(255,255,255,0.75);
-    letter-spacing: 0.3px;
     z-index: 3;
     pointer-events: none;
 }
 
-/* RIGHT PANEL */
+/* =====================
+   RIGHT PANEL
+===================== */
 .right-panel {
-    margin-left: 25%;
     padding: 52px 110px 80px 110px;
 }
 
-/* HEADER */
 .name-en {
     font-size: 38px;
     font-weight: 700;
@@ -153,12 +147,10 @@ nav a {
     margin-bottom: 28px;
 }
 
-/* TEXT */
 .main-text {
     line-height: 1.35;
 }
 
-/* SECTION HEADERS */
 .section-bar {
     margin-top: 36px;
     margin-bottom: 12px;
@@ -170,7 +162,7 @@ nav a {
 }
 
 /* =====================
-   MOBILE – TEXT ONLY
+   MOBILE CONTENT ONLY
 ===================== */
 @media (max-width: 1000px) {
     .layout {
@@ -180,7 +172,6 @@ nav a {
         display: none;
     }
     .right-panel {
-        margin-left: 0;
         padding: 48px 36px;
     }
 }
@@ -189,7 +180,6 @@ nav a {
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
@@ -199,7 +189,6 @@ nav a {
     </nav>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="layout">
 
     <aside class="left-panel">
