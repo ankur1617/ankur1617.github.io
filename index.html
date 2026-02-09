@@ -173,7 +173,7 @@ nav a {
         padding: 48px 36px;
     }
 
-    /* ✅ FIXED: square, cropped, smaller portrait */
+    /* square, cropped portrait */
     .portrait {
         width: 52%;
         aspect-ratio: 1 / 1;
@@ -187,9 +187,31 @@ nav a {
         object-position: center top;
     }
 
+    /* ===== MOBILE NAV FIX (ONLY CHANGE) ===== */
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
     .bengali-top {
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    nav a {
+        margin-left: 0;
     }
 }
 
