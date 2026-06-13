@@ -34,8 +34,8 @@ body {
     font-family: 'Source Serif 4', serif;
     background-color: var(--cream);
     color: var(--ink);
-    font-size: 17px;
-    line-height: 1.85;
+    font-size: 15px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -197,28 +197,28 @@ nav a.active { color: var(--blue); border-color: var(--teal); }
 /* RIGHT PANEL */
 .right-panel {
     margin-left: 25%;
-    padding: 64px 110px 90px 110px;
-    max-width: 980px;
+    padding: 40px 90px 60px 90px;
+    max-width: 920px;
 }
 
 /* HERO */
 .eyebrow{
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--teal);
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 .name-en {
     font-family: 'Libre Baskerville', serif;
-    font-size: 46px;
+    font-size: 34px;
     font-weight: 700;
     color: var(--blue);
     line-height: 1.15;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     letter-spacing: 0.01em;
 }
 
@@ -231,25 +231,25 @@ nav a.active { color: var(--blue); border-color: var(--teal); }
     max-width: 640px;
 }
 
-.main-text p { margin: 0 0 1.3em 0; }
+.main-text p { margin: 0 0 0.9em 0; }
 .main-text p:last-child { margin-bottom: 0; }
 
 /* RESEARCH FOCUS TAGS */
 .focus-tags{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 30px 0 38px;
+    gap: 8px;
+    margin: 18px 0 8px;
 }
 .focus-tags span{
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.04em;
     color: var(--teal);
     border: 1px solid var(--teal);
     border-radius: 999px;
-    padding: 6px 16px;
+    padding: 4px 13px;
     background: rgba(79,122,107,0.06);
     transition: background 0.25s ease, color 0.25s ease;
 }
@@ -259,17 +259,17 @@ nav a.active { color: var(--blue); border-color: var(--teal); }
 }
 
 /* SECTIONS */
-section.block{ margin-top: 56px; }
+section.block{ margin-top: 40px; }
 
 .section-head{
     display: flex;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 22px;
+    gap: 14px;
+    margin-bottom: 14px;
 }
 .section-head h2{
     font-family: 'Libre Baskerville', serif;
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--blue);
     margin: 0;
@@ -281,25 +281,24 @@ section.block{ margin-top: 56px; }
 .entry-list{ list-style: none; margin: 0; padding: 0; }
 .entry-list li{
     position: relative;
-    padding: 0 0 1.15em 26px;
+    padding: 0.65em 0 0.65em 22px;
     border-bottom: 1px solid rgba(201,191,174,0.5);
 }
 .entry-list li:last-child{ border-bottom: none; padding-bottom: 0; }
+.entry-list li:first-child{ padding-top: 0; }
 .entry-list li::before{
     content: "";
     position: absolute;
     left: 0;
-    top: 0.7em;
-    width: 8px;
-    height: 8px;
+    top: 0.65em;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: var(--teal);
     opacity: 0.7;
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .entry-list li:hover::before{ opacity: 1; transform: scale(1.25); }
-.entry-list li{ padding-top: 1.15em; }
-.entry-list li:first-child{ padding-top: 0; }
 
 /* CONTACT */
 .contact-block{
@@ -406,53 +405,56 @@ footer{
     <div class="wave"></div>
 
     <div class="main-text">
-        <p>I am a Ph.D. candidate in Integrative Biology at Oklahoma State University, with research interests spanning aquatic ecology, environmental toxicology, and molecular biology. My work focuses on harmful algal blooms (HABs) and the environmental drivers that regulate the production of cyanobacterial toxins.</p>
+        <p>I am a Ph.D. candidate in Integrative Biology at Oklahoma State University, working at the intersection of aquatic ecology, environmental chemistry, and toxicology. My dissertation examines sulfate availability as a regulator of toxin production in cyanobacterial harmful algal blooms (cHABs).</p>
 
-        <p>More broadly, I investigate how environmental conditions shape the production and activity of bioactive molecules, and how these compounds influence biological systems across scales. Cyanobacterial toxins such as microcystins are classically studied as environmental hazards, yet they are also highly specific modulators of cellular pathways, particularly through inhibition of serine/threonine protein phosphatases (e.g., PP1 and PP2A). This dual identity positions them at the intersection of environmental toxicology and therapeutic toxicology.</p>
+        <p>Combining physiology, elemental ionomics, and transcriptomics with national-scale environmental datasets (EPA National Lakes Assessment, ~2,751 sites), I show that sulfate concentration predicts microcystin risk independently of bloom biomass &mdash; a result with direct implications for water-quality monitoring and public health.</p>
+    </div>
 
-        <p>My research is motivated by the idea that understanding how environmental factors regulate toxin biosynthesis can inform not only risk assessment and ecosystem management, but also the broader study of bioactive natural products with pharmacological potential. By linking environmental drivers to molecular function, I aim to contribute to a framework where naturally occurring toxins are viewed not only as contaminants, but also as tools for probing cellular signaling and as leads for therapeutic exploration.</p>
-
-        <p>Ultimately, my goal is to develop integrative and predictive approaches that connect environmental change to toxin production, biological activity, and human health outcomes. This includes advancing our ability to anticipate toxic events in freshwater systems while also contributing to the mechanistic understanding of compounds that sit at the boundary of toxicity and therapeutic utility.</p>
+    <div class="contact-block" style="margin: 4px 0 18px;">
+        Department of Biology, Oklahoma State University, Stillwater, OK &middot;
+        <a href="mailto:ankur.biswas@okstate.edu">ankur.biswas@okstate.edu</a>
     </div>
 
     <div class="focus-tags">
         <span>Harmful Algal Blooms</span>
-        <span>Microcystins</span>
-        <span>PP1 / PP2A Inhibition</span>
+        <span>Cyanotoxins &amp; Microcystins</span>
         <span>Environmental Toxicology</span>
         <span>Bioactive Natural Products</span>
     </div>
 
-    <!-- AWARDS -->
+    <!-- EDUCATION -->
     <section class="block">
         <div class="section-head">
-            <h2>Awards &amp; Honors</h2>
+            <h2>Education</h2>
             <div class="wave"></div>
         </div>
         <ul class="entry-list">
-            <li>Society of Toxicology (SOT) has awarded me the 2026 SOT Graduate Student Travel Award for the 65th Annual SOT Conference on March 2026, in San Diego, California, USA.</li>
-            <li>Department of Integrative Biology, Oklahoma State University has awarded me the Dr Bud Burks Mem Grad IS Award for best research in aquatic science on April 21, 2025.</li>
-            <li>College of Veterinary Medicine, Oklahoma State University has awarded me the 2025 Vet Med Graduate Award.</li>
-            <li>Oklahoma Clean Lakes &amp; Watersheds Association has awarded me the Best Poster Presentation Award for excellent presentation of research at the OCLWA Conference, 2025.</li>
-            <li>Received the Best Poster Award for excellent presentation of research at the 1st iBIS Symposium, 2025.</li>
-            <li>Received the ZorroBucks Scholarship from the Department of Integrative Biology, Oklahoma State University.</li>
-            <li>Recipient of the DST-INSPIRE SHE Fellowship, a program funded and managed by the Department of Science and Technology (DST), India.</li>
-            <li>Participated in the National Scout &amp; Guide Integration Program &amp; Camp, Jamboree 2010, organized by JNV Samiti in Secunderabad, India.</li>
+            <li><strong>Ph.D., Biology</strong> &mdash; Oklahoma State University, 2023&ndash;present (expected 2028). Dissertation: <em>Sulfur availability as a regulator of cyanobacterial toxin risk</em>. Advisor: Dr. Punidan D. Jeyasingh.</li>
+            <li><strong>Integrated B.S.&ndash;M.S., Biology</strong> &mdash; IISER Pune, India, 2021. Advisor: Dr. Chaitanya Athale.</li>
         </ul>
     </section>
 
-    <!-- SYMPOSIA -->
+    <!-- PUBLICATIONS -->
     <section class="block">
         <div class="section-head">
-            <h2>Symposia, Conferences &amp; Service</h2>
+            <h2>Publications</h2>
             <div class="wave"></div>
         </div>
         <ul class="entry-list">
-            <li>Organizer, special sessions on nutrient&ndash;toxin interactions in aquatic systems.</li>
-            <li>Contributor to NSF proposal development through figure design and data synthesis.</li>
-            <li>Graduate Teaching Assistant for undergraduate biology and ecology laboratories.</li>
-            <li>Mentor to undergraduate researchers at Oklahoma State University.</li>
-            <li>Member, Zoology Graduate Student Society (ZoGSS).</li>
+            <li>Sharma, A., Baraiya, R., Prakash, S., Biswas, A., Chowdhury, B., Sharma, A. Anti-inflammatory potential of fish-derived bioactive peptides: molecular mechanisms, delivery strategies, and clinical perspectives. <em>Comprehensive Reviews in Food Science and Food Safety</em>, 24(4), e70234 (2025).</li>
+            <li>Pandey, S., Sharma, V.K., Biswas, A., Lahiri, M., Basu, S. Small molecule-mediated induction of endoplasmic reticulum stress in cancer cells. <em>RSC Medicinal Chemistry</em>, 12(9), 1604&ndash;1611 (2021).</li>
+        </ul>
+    </section>
+
+    <!-- HONORS -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Honors</h2>
+            <div class="wave"></div>
+        </div>
+        <ul class="entry-list">
+            <li>SOT Graduate Student Travel Award &mdash; Society of Toxicology, 65th Annual Meeting, San Diego, 2026.</li>
+            <li>Dr. Bud Burks Memorial Award for Best Research in Aquatic Science &mdash; Oklahoma State University, 2025.</li>
         </ul>
     </section>
 
