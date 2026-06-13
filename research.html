@@ -5,22 +5,55 @@
 <title>Research | Ankur Biswas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
+/* =====================
+   TOKENS
+===================== */
+:root{
+    --cream:   #f7f1e3;
+    --ink:     #2b2b28;
+    --blue:    #0a4a82;
+    --teal:    #4f7a6b;
+    --line:    #c9bfae;
+    --muted:   #6b6258;
+}
+
+*{ box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
-    font-family: 'Libre Baskerville', serif;
-    background-color: #f7f1e3;
-    color: #1e1e1e;
+    font-family: 'Source Serif 4', serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
-a { color: #083a6b; text-decoration: none; }
-a:hover { text-decoration: underline; }
+
+a { color: var(--blue); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--teal); text-decoration: underline; }
+
+::selection { background: var(--teal); color: #fff; }
 
 /* =====================
-   TOP BAR – SHARED
+   WAVE DIVIDER
+===================== */
+.wave {
+    height: 10px;
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C 8 0, 12 10, 20 5 C 28 0, 32 10, 40 5' fill='none' stroke='%234f7a6b' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 40px 10px;
+    opacity: 0.85;
+}
+
+/* =====================
+   TOP BAR
 ===================== */
 .topbar {
     position: relative;
@@ -28,75 +61,54 @@ a:hover { text-decoration: underline; }
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 12px 40px;
-    border-bottom: 1px solid #c9bfae;
-    background-color: #f7f1e3;
+    padding: 18px 44px;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--cream);
 }
 
-/* Bengali name — DESKTOP default (left) */
 .bengali-top {
     position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 44px;
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
-    white-space: nowrap;
+    color: var(--ink);
+    letter-spacing: 0.5px;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
+nav { display: flex; align-items: center; gap: 8px; }
 
 nav a {
-    font-weight: 700;
-    font-size: 15px;
-    color: #083a6b;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-left: 8px;
+    padding: 6px 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
+nav a:hover { color: var(--teal); border-color: var(--teal); text-decoration: none; }
+nav a.active { color: var(--blue); border-color: var(--teal); }
 
 /* =====================
-   MOBILE OVERRIDE
+   LAYOUT
 ===================== */
-@media (max-width: 900px) {
-
-    .topbar {
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 14px 20px;
-    }
-
-    /* Bengali name — centered on mobile */
-    .bengali-top {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 6px;
-    }
-
-    nav {
-        width: 100%;
-        justify-content: center;
-        gap: 24px;
-    }
-}
-
-/* LAYOUT – MATCH HOME */
 .layout {
     display: grid;
     grid-template-columns: 25% 75%;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
 }
 
-/* LEFT PANEL – BACKGROUND ONLY */
 .left-panel {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100vh;
     background-image: url("Pictures/Double Tribal.jpeg");
     background-size: cover;
     background-position: top center;
@@ -111,14 +123,14 @@ nav a {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(10, 25, 30, 0.55);
 }
 
-/* ARTIST CREDIT – SAME AS HOME */
 .artist-credit {
     position: absolute;
     bottom: 18px;
     right: 22px;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 12px;
     font-style: italic;
     color: rgba(255, 255, 255, 0.75);
@@ -127,64 +139,180 @@ nav a {
     pointer-events: none;
 }
 
-/* RIGHT PANEL */
 .right-panel {
-    padding: 52px 110px 80px 110px;
+    margin-left: 25%;
+    padding: 40px 90px 60px 90px;
+    max-width: 920px;
 }
 
-/* TITLE – SAME STYLE AS HOME */
+/* HERO */
+.eyebrow{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+}
+
 .name-en {
-    font-size: 38px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 34px;
     font-weight: 700;
-    color: #083a6b;
-    margin-bottom: 4px;
-}
-.rule-thick {
-    height: 3px;
-    background-color: #083a6b;
-    margin-bottom: 4px;
-}
-.rule-thin {
-    height: 1px;
-    background-color: #083a6b;
-    margin-bottom: 28px;
-}
-
-/* TEXT */
-.main-text {
-    line-height: 1.35;
-}
-
-/* SECTION HEADERS – SAME AS HOME */
-.section-bar {
-    margin-top: 36px;
+    color: var(--blue);
+    line-height: 1.15;
     margin-bottom: 12px;
-    padding: 6px 0;
-    border-top: 1px solid #c9bfae;
-    border-bottom: 1px solid #c9bfae;
+    letter-spacing: 0.01em;
+}
+
+.main-text p { margin: 0 0 0.9em 0; }
+.main-text p:last-child { margin-bottom: 0; }
+
+/* SECTIONS */
+section.block{ margin-top: 40px; }
+
+.section-head{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.section-head h2{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 17px;
     font-weight: 700;
-    color: #4a5f73;
+    color: var(--blue);
+    margin: 0;
+    white-space: nowrap;
+}
+.section-head .wave{ flex: 1; }
+
+/* THEME / METHOD TAGS */
+.tag-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag-list span{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 999px;
+    padding: 4px 13px;
+    background: rgba(79,122,107,0.06);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+.tag-list span:hover{
+    background: var(--teal);
+    color: #fdfaf2;
 }
 
-/* LISTS */
-ul {
-    padding-left: 18px;
+/* ENTRY LIST */
+.entry-list{ list-style: none; margin: 0; padding: 0; }
+.entry-list li{
+    position: relative;
+    padding: 0.65em 0 0.65em 22px;
+    border-bottom: 1px solid rgba(201,191,174,0.5);
 }
-li {
-    margin-bottom: 12px;
+.entry-list li:last-child{ border-bottom: none; padding-bottom: 0; }
+.entry-list li:first-child{ padding-top: 0; }
+.entry-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.7;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.entry-list li:hover::before{ opacity: 1; transform: scale(1.25); }
+.entry-list li .pub-title{ font-style: italic; }
+.entry-list li .pub-note{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
 }
 
-/* MOBILE – TEXT ONLY */
+footer{
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.right-panel > .fade-in{
+    animation: fadeUp 0.7s ease both;
+}
+.right-panel > .fade-in:nth-of-type(1){ animation-delay: 0s; }
+.right-panel > .fade-in:nth-of-type(2){ animation-delay: 0.05s; }
+.right-panel > .fade-in:nth-of-type(3){ animation-delay: 0.1s; }
+
+section.block{
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.block.in-view{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================
+   MOBILE
+===================== */
 @media (max-width: 1000px) {
-    .layout {
-        grid-template-columns: 1fr;
+
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 16px 20px;
+        gap: 10px;
     }
-    .left-panel {
-        display: none;
+
+    .bengali-top {
+        position: relative;
+        left: auto;
+        width: 100%;
+        text-align: center;
     }
+
+    nav { width: 100%; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    nav a{ margin-left: 0; }
+
+    .layout { grid-template-columns: 1fr; }
+
+    .left-panel { display: none; }
+
     .right-panel {
-        padding: 48px 36px;
+        margin-left: 0;
+        padding: 44px 24px 70px;
     }
+
+    .name-en{ font-size: 34px; }
+    .section-head{ flex-wrap: wrap; gap: 10px; }
+    .section-head .wave{ flex-basis: 100%; order: 2; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; }
 }
 </style>
 </head>
@@ -196,83 +324,117 @@ li {
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
+        <a href="research.html" class="active">Research</a>
         <a href="teaching.html">Teaching</a>
     </nav>
 </div>
 
-<!-- MAIN LAYOUT -->
-<div class="layout">
-
-    <aside class="left-panel">
-        <div class="artist-credit">Painted by Manali Mandal</div>
-    </aside>
-
-    <main class="right-panel">
-
-        <div class="name-en">Research</div>
-        <div class="rule-thick"></div>
-        <div class="rule-thin"></div>
-
-        <div class="main-text">
-            My research focuses on understanding how elemental nutrient availability—particularly sulfur—
-            regulates cyanobacterial physiology and toxin production in freshwater ecosystems.
-            I work at the interface of ecological stoichiometry, molecular biology, and environmental
-            toxicology to resolve nutrient–toxin linkages in harmful algal blooms (HABs).
-        </div>
-
-        <div class="main-text">
-            My doctoral work integrates physiological measurements, ionomics, and gene expression
-            analyses to identify mechanistic controls on microcystin biosynthesis in
-            <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.
-        </div>
-
-        <div class="section-bar">Current Research Themes</div>
-        <div class="main-text">
-            • Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria<br>
-            • Harmful algal blooms (HABs) and freshwater toxicology<br>
-            • Elemental stoichiometry and nutrient–toxin coupling<br>
-            • Environmental stressors and physiological trade-offs in phytoplankton
-        </div>
-
-        <div class="section-bar">Manuscripts and Publications</div>
-        <div class="main-text">
-            <strong>Biswas, A.</strong>, Jeyasingh, P. D., &amp; Belden, J. B.<br>
-            <em>Sulfur availability regulates microcystin production through elemental and molecular constraints in
-            <span style="font-style: italic;">Microcystis aeruginosa</span>.</em><br>
-            (Manuscript in preparation)
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al.<br>
-            <em>Stoichiometric controls on cyanotoxin production under nutrient stress.</em><br>
-            (Planned submission)
-        </div>
-
-        <div class="section-bar">Conference Presentations and Posters</div>
-        <div class="main-text">
-            <strong>Biswas, A.</strong>, et al. — Society of Toxicology (SOT)<br>
-            <em>Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</em>
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al. — Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
-            <em>Elemental constraints on harmful algal bloom toxicity.</em>
-            <br><br>
-
-            <strong>Biswas, A.</strong>, et al. — Integrative Biology Symposium (IBiS), Oklahoma State University<br>
-            <em>Linking sulfur stoichiometry to cyanobacterial toxin production.</em>
-        </div>
-
-        <div class="section-bar">Methods and Approaches</div>
-        <div class="main-text">
-            • Controlled laboratory experiments with cyanobacteria<br>
-            • Microcystin quantification (ELISA)<br>
-            • Elemental profiling using ICP-OES (ionomics)<br>
-            • RNA-based molecular and transcriptomic analyses<br>
-            • Advanced statistical modeling and visualization in R
-        </div>
-
-    </main>
+<!-- LEFT BACKGROUND -->
+<div class="left-panel">
+    <div class="artist-credit">Painted by Manali Mandal</div>
 </div>
+
+<!-- RIGHT CONTENT -->
+<div class="right-panel">
+
+    <div class="eyebrow fade-in">Research Overview</div>
+    <div class="name-en fade-in">Research</div>
+    <div class="wave fade-in"></div>
+
+    <div class="main-text fade-in">
+        <p>My research examines how elemental nutrient availability &mdash; particularly sulfur &mdash; regulates cyanobacterial physiology and toxin production in freshwater ecosystems. I work at the interface of ecological stoichiometry, molecular biology, and environmental toxicology to resolve nutrient&ndash;toxin linkages in harmful algal blooms (HABs).</p>
+        <p>My doctoral work integrates physiological measurements, ionomics, and gene expression analyses to identify mechanistic controls on microcystin biosynthesis in <em>Microcystis aeruginosa</em>, with implications for ecosystem health and water management.</p>
+    </div>
+
+    <!-- THEMES -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Current Research Themes</h2>
+            <div class="wave"></div>
+        </div>
+        <div class="tag-list">
+            <span>Sulfur &amp; Microcystin Biosynthesis</span>
+            <span>Harmful Algal Blooms</span>
+            <span>Elemental Stoichiometry</span>
+            <span>Nutrient&ndash;Toxin Coupling</span>
+            <span>Phytoplankton Physiology</span>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Manuscripts &amp; Publications</h2>
+            <div class="wave"></div>
+        </div>
+        <ul class="entry-list">
+            <li>
+                <strong>Biswas, A.</strong>, Jeyasingh, P.D., &amp; Belden, J.B.<br>
+                <span class="pub-title">Sulfur availability regulates microcystin production through elemental and molecular constraints in <em>Microcystis aeruginosa</em>.</span><br>
+                <span class="pub-note">Manuscript in preparation</span>
+            </li>
+            <li>
+                <strong>Biswas, A.</strong>, et al.<br>
+                <span class="pub-title">Stoichiometric controls on cyanotoxin production under nutrient stress.</span><br>
+                <span class="pub-note">Planned submission</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- CONFERENCES -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Conference Presentations &amp; Posters</h2>
+            <div class="wave"></div>
+        </div>
+        <ul class="entry-list">
+            <li>
+                <strong>Biswas, A.</strong>, et al. &mdash; Society of Toxicology (SOT)<br>
+                <span class="pub-title">Sulfur-mediated regulation of microcystin biosynthesis in cyanobacteria.</span>
+            </li>
+            <li>
+                <strong>Biswas, A.</strong>, et al. &mdash; Oklahoma Clean Lakes &amp; Watersheds Association (OCLWA)<br>
+                <span class="pub-title">Elemental constraints on harmful algal bloom toxicity.</span>
+            </li>
+            <li>
+                <strong>Biswas, A.</strong>, et al. &mdash; Integrative Biology Symposium (IBiS), Oklahoma State University<br>
+                <span class="pub-title">Linking sulfur stoichiometry to cyanobacterial toxin production.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- METHODS -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Methods &amp; Approaches</h2>
+            <div class="wave"></div>
+        </div>
+        <div class="tag-list">
+            <span>Cyanobacterial Culturing</span>
+            <span>Microcystin ELISA</span>
+            <span>ICP-OES Ionomics</span>
+            <span>Transcriptomics</span>
+            <span>Statistical Modeling in R</span>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Ankur Biswas &middot; Oklahoma State University
+    </footer>
+
+</div>
+
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('section.block').forEach(el => obs.observe(el));
+} else {
+    document.querySelectorAll('section.block').forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.fade-in').forEach(el => el.style.animation = 'none');
+}
+</script>
 
 </body>
 </html>
