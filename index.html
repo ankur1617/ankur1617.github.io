@@ -6,26 +6,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 /* =====================
-   GLOBAL
+   TOKENS
 ===================== */
-body {
-    margin: 0;
-    font-family: 'Libre Baskerville', serif;
-    background-color: #f7f1e3;
-    color: #1f1f1f;
-    font-size: 14px;
+:root{
+    --cream:   #f7f1e3;
+    --ink:     #2b2b28;
+    --blue:    #0a4a82;
+    --teal:    #4f7a6b;   /* cyanobacteria / algae accent */
+    --line:    #c9bfae;
+    --muted:   #6b6258;
 }
 
-a {
-    color: #0a4a82;
-    text-decoration: none;
+/* =====================
+   GLOBAL
+===================== */
+*{ box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Source Serif 4', serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
 }
-a:hover { text-decoration: underline; }
+
+a { color: var(--blue); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--teal); text-decoration: underline; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.right-panel > *{
+    animation: fadeUp 0.7s ease both;
+}
+.right-panel > *:nth-child(1){ animation-delay: 0s; }
+.right-panel > *:nth-child(2){ animation-delay: 0.05s; }
+.right-panel > *:nth-child(3){ animation-delay: 0.1s; }
+.right-panel > *:nth-child(4){ animation-delay: 0.15s; }
+.right-panel > *:nth-child(5){ animation-delay: 0.2s; }
+.right-panel > *:nth-child(n+6){ animation: none; }
+
+section.block{
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.block.in-view{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+::selection { background: var(--teal); color: #fff; }
+
+/* =====================
+   WAVE DIVIDER (signature element)
+===================== */
+.wave {
+    height: 10px;
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C 8 0, 12 10, 20 5 C 28 0, 32 10, 40 5' fill='none' stroke='%234f7a6b' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 40px 10px;
+    opacity: 0.85;
+}
+.wave-sm{
+    height: 8px;
+    width: 64px;
+    background-size: 32px 8px;
+    margin-bottom: 14px;
+}
 
 /* =====================
    TOP BAR
@@ -36,30 +95,41 @@ a:hover { text-decoration: underline; }
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 12px 40px;
-    border-bottom: 1px solid #c9bfae;
-    background-color: #f7f1e3;
+    padding: 18px 44px;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--cream);
 }
 
-/* Bengali name */
 .bengali-top {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 44px;
     font-family: 'Noto Serif Bengali', serif;
     font-size: 22px;
     font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.5px;
 }
 
-/* NAV */
+nav { display: flex; align-items: center; gap: 8px; }
+
 nav a {
-    margin-left: 30px;
-    font-weight: 700;
-    font-size: 15px;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-left: 8px;
+    padding: 6px 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
+nav a:hover { color: var(--teal); border-color: var(--teal); text-decoration: none; }
+nav a.active { color: var(--blue); border-color: var(--teal); }
 
 /* =====================
-   DESKTOP LAYOUT
+   LAYOUT
 ===================== */
 .layout {
     display: grid;
@@ -90,7 +160,7 @@ nav a {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(10, 25, 30, 0.55);
 }
 
 .left-inner {
@@ -101,23 +171,21 @@ nav a {
     padding-top: 60px;
 }
 
-/* PORTRAIT */
 .portrait {
     width: 62%;
-    border: 1px solid #c9bfae;
+    border: 1px solid var(--line);
     padding: 5px;
     background: #111;
+    overflow: hidden;
 }
-.portrait img {
-    width: 100%;
-    display: block;
-}
+.portrait img { width: 100%; display: block; transition: transform 0.6s ease; }
+.portrait:hover img { transform: scale(1.04); }
 
-/* ARTIST CREDIT */
 .artist-credit {
     position: absolute;
     bottom: 18px;
     right: 22px;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 12px;
     font-style: italic;
     color: rgba(255, 255, 255, 0.75);
@@ -129,83 +197,162 @@ nav a {
 /* RIGHT PANEL */
 .right-panel {
     margin-left: 25%;
-    padding: 52px 110px 80px 110px;
+    padding: 64px 110px 90px 110px;
+    max-width: 980px;
+}
+
+/* HERO */
+.eyebrow{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
 }
 
 .name-en {
-    font-size: 38px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 46px;
     font-weight: 700;
-    color: #0a4a82;
-    margin-bottom: 4px;
+    color: var(--blue);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
 }
 
-.rule-thick {
-    height: 3px;
-    background-color: #0a4a82;
-    width: 100%;
-    margin-bottom: 4px;
-}
-.rule-thin {
-    height: 1px;
-    background-color: #0a4a82;
-    width: 100%;
-    margin-bottom: 24px;
+.tagline{
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--muted);
+    margin: 22px 0 28px;
+    max-width: 640px;
 }
 
-.main-text {
-    line-height: 1.95;
+.main-text p { margin: 0 0 1.3em 0; }
+.main-text p:last-child { margin-bottom: 0; }
+
+/* RESEARCH FOCUS TAGS */
+.focus-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0 38px;
+}
+.focus-tags span{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 999px;
+    padding: 6px 16px;
+    background: rgba(79,122,107,0.06);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+.focus-tags span:hover{
+    background: var(--teal);
+    color: #fdfaf2;
 }
 
-.section-bar {
-    margin-top: 36px;
-    margin-bottom: 12px;
-    padding: 6px 0;
-    border-top: 1px solid #c9bfae;
-    border-bottom: 1px solid #c9bfae;
+/* SECTIONS */
+section.block{ margin-top: 56px; }
+
+.section-head{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+.section-head h2{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 22px;
     font-weight: 700;
-    color: #4a5f73;
+    color: var(--blue);
+    margin: 0;
+    white-space: nowrap;
+}
+.section-head .wave{ flex: 1; }
+
+/* AWARD / LIST ITEMS */
+.entry-list{ list-style: none; margin: 0; padding: 0; }
+.entry-list li{
+    position: relative;
+    padding: 0 0 1.15em 26px;
+    border-bottom: 1px solid rgba(201,191,174,0.5);
+}
+.entry-list li:last-child{ border-bottom: none; padding-bottom: 0; }
+.entry-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.7;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.entry-list li:hover::before{ opacity: 1; transform: scale(1.25); }
+.entry-list li{ padding-top: 1.15em; }
+.entry-list li:first-child{ padding-top: 0; }
+
+/* CONTACT */
+.contact-block{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+}
+.contact-block strong{ color: var(--ink); }
+.contact-block a{ font-weight: 600; }
+
+footer{
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
 }
 
 /* =====================
-   MOBILE FIXES ONLY
+   MOBILE
 ===================== */
 @media (max-width: 1000px) {
 
     .topbar {
         justify-content: center;
         flex-wrap: wrap;
-        padding: 14px 20px;
+        padding: 16px 20px;
+        gap: 10px;
     }
 
     .bengali-top {
         position: relative;
         left: auto;
-        transform: none;
         width: 100%;
         text-align: center;
-        margin-bottom: 6px;
     }
 
-    nav {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-    }
+    nav { width: 100%; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    nav a{ margin-left: 0; }
 
-    .layout {
-        grid-template-columns: 1fr;
-    }
+    .layout { grid-template-columns: 1fr; }
 
     .left-panel {
         position: relative;
         width: 100%;
-        height: 360px;
+        height: 320px;
     }
 
     .right-panel {
         margin-left: 0;
-        padding: 48px 36px;
+        padding: 44px 24px 70px;
     }
 
     .portrait {
@@ -213,23 +360,18 @@ nav a {
         aspect-ratio: 1 / 1;
         overflow: hidden;
     }
-
     .portrait img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center top;
     }
+
+    .name-en{ font-size: 34px; }
+    .section-head{ flex-wrap: wrap; gap: 10px; }
+    .section-head .wave{ flex-basis: 100%; order: 2; }
 }
 
-/* =====================
-   DESKTOP ONLY
-===================== */
-@media (min-width: 1001px) {
-    .bengali-top {
-        left: 40px;
-        transform: none;
-    }
+@media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; }
 }
 </style>
 </head>
@@ -240,7 +382,7 @@ nav a {
 <div class="topbar">
     <div class="bengali-top" lang="bn">অঙ্কুর বিশ্বাস</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
     </nav>
@@ -250,77 +392,98 @@ nav a {
 <div class="left-panel">
     <div class="left-inner">
         <div class="portrait">
-            <img src="Pictures/AA.jpeg" alt="Ankur Biswas">
+            <img src="Pictures/AA.jpeg" alt="Portrait of Ankur Biswas">
         </div>
     </div>
-
     <div class="artist-credit">Painted by Manali Mandal</div>
 </div>
 
 <!-- RIGHT CONTENT -->
 <div class="right-panel">
 
+    <div class="eyebrow">Ph.D. Candidate &middot; Integrative Biology &middot; Oklahoma State University</div>
     <div class="name-en">Ankur Biswas</div>
-    <div class="rule-thick"></div>
-    <div class="rule-thin"></div>
+    <div class="wave"></div>
 
     <div class="main-text">
-        I am a Ph.D. candidate in Integrative Biology at Oklahoma State University, with research interests spanning aquatic ecology, environmental toxicology, and molecular biology. My work focuses on harmful algal blooms (HABs) and the environmental drivers that regulate the production of cyanobacterial toxins.<br>
+        <p>I am a Ph.D. candidate in Integrative Biology at Oklahoma State University, with research interests spanning aquatic ecology, environmental toxicology, and molecular biology. My work focuses on harmful algal blooms (HABs) and the environmental drivers that regulate the production of cyanobacterial toxins.</p>
 
+        <p>More broadly, I investigate how environmental conditions shape the production and activity of bioactive molecules, and how these compounds influence biological systems across scales. Cyanobacterial toxins such as microcystins are classically studied as environmental hazards, yet they are also highly specific modulators of cellular pathways, particularly through inhibition of serine/threonine protein phosphatases (e.g., PP1 and PP2A). This dual identity positions them at the intersection of environmental toxicology and therapeutic toxicology.</p>
 
-       More broadly, I investigate how environmental conditions shape the production and activity of bioactive molecules, and how these compounds influence biological systems across scales. Cyanobacterial toxins such as microcystins are classically studied as environmental hazards, yet they are also highly specific modulators of cellular pathways, particularly through inhibition of serine/threonine protein phosphatases (e.g., PP1 and PP2A). This dual identity positions them at the intersection of environmental toxicology and therapeutic toxicology.<br>
+        <p>My research is motivated by the idea that understanding how environmental factors regulate toxin biosynthesis can inform not only risk assessment and ecosystem management, but also the broader study of bioactive natural products with pharmacological potential. By linking environmental drivers to molecular function, I aim to contribute to a framework where naturally occurring toxins are viewed not only as contaminants, but also as tools for probing cellular signaling and as leads for therapeutic exploration.</p>
 
-
-       My research is motivated by the idea that understanding how environmental factors regulate toxin biosynthesis can inform not only risk assessment and ecosystem management, but also the broader study of bioactive natural products with pharmacological potential. By linking environmental drivers to molecular function, I aim to contribute to a framework where naturally occurring toxins are viewed not only as contaminants, but also as tools for probing cellular signaling and as leads for therapeutic exploration.<br>
-
-
-       Ultimately, my goal is to develop integrative and predictive approaches that connect environmental change to toxin production, biological activity, and human health outcomes. This includes advancing our ability to anticipate toxic events in freshwater systems while also contributing to the mechanistic understanding of compounds that sit at the boundary of toxicity and therapeutic utility.
+        <p>Ultimately, my goal is to develop integrative and predictive approaches that connect environmental change to toxin production, biological activity, and human health outcomes. This includes advancing our ability to anticipate toxic events in freshwater systems while also contributing to the mechanistic understanding of compounds that sit at the boundary of toxicity and therapeutic utility.</p>
     </div>
 
-    <div class="section-bar">Awards and Honors</div>
-    <div class="main-text">
-      
-       Society of Toxicology (SOT) has awarded me the 2026 SOT Graduate Student Travel Award for the 65th Annual SOT Conference on March 2026, in San Diego, California, USA.<br>
-
-       Department of Integrative Biology, Oklahoma State University has awarded me the Dr Bud Burks Mem Grad IS Award for best research in aquatic science on April 21, 2025.<br>
-
-
-       College of Veterancy Medicine, Oklahoma State University has awarded me the 2025 Vet Med Graduate Award.<br>
-
-
-       Oklahoma Clean Lakes & Watersheds Association has awarded me the Best poster Presentation Award for excellent presentation of research at OCLWA Conference, 2025.<br>
-
-
-       Received the Best poster Award for excellent presentation of research at 1st iBIS symposium, 2025.<br>
-
-
-       Received the ZorroBucks scholarship from Department of Integrative Biology, Oklahoma State University.<br>
-
-
-       Recipient of the DST-INSPIRE SHE Fellowship. A program funded and managed by Department of Science and Technology (DST), India.<br>
-
-
-       Participated in National Scout & Guide Integration Program & Camp, Jamboree 2010 organized by JNV samitee in Secunderabad, India.
-
+    <div class="focus-tags">
+        <span>Harmful Algal Blooms</span>
+        <span>Microcystins</span>
+        <span>PP1 / PP2A Inhibition</span>
+        <span>Environmental Toxicology</span>
+        <span>Bioactive Natural Products</span>
     </div>
 
-    <div class="section-bar">Symposia, Conferences, and Service</div>
-    <div class="main-text">
-        Organizer, special sessions on nutrient–toxin interactions in aquatic systems.<br>
-        Contributor to NSF proposal development through figure design and data synthesis.<br>
-        Graduate Teaching Assistant for undergraduate biology and ecology laboratories.<br>
-        Mentor to undergraduate researchers at Oklahoma State University.<br>
-        Member, Zoology Graduate Student Society (ZoGSS).
-    </div>
+    <!-- AWARDS -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Awards &amp; Honors</h2>
+            <div class="wave"></div>
+        </div>
+        <ul class="entry-list">
+            <li>Society of Toxicology (SOT) has awarded me the 2026 SOT Graduate Student Travel Award for the 65th Annual SOT Conference on March 2026, in San Diego, California, USA.</li>
+            <li>Department of Integrative Biology, Oklahoma State University has awarded me the Dr Bud Burks Mem Grad IS Award for best research in aquatic science on April 21, 2025.</li>
+            <li>College of Veterinary Medicine, Oklahoma State University has awarded me the 2025 Vet Med Graduate Award.</li>
+            <li>Oklahoma Clean Lakes &amp; Watersheds Association has awarded me the Best Poster Presentation Award for excellent presentation of research at the OCLWA Conference, 2025.</li>
+            <li>Received the Best Poster Award for excellent presentation of research at the 1st iBIS Symposium, 2025.</li>
+            <li>Received the ZorroBucks Scholarship from the Department of Integrative Biology, Oklahoma State University.</li>
+            <li>Recipient of the DST-INSPIRE SHE Fellowship, a program funded and managed by the Department of Science and Technology (DST), India.</li>
+            <li>Participated in the National Scout &amp; Guide Integration Program &amp; Camp, Jamboree 2010, organized by JNV Samiti in Secunderabad, India.</li>
+        </ul>
+    </section>
 
-    <div class="section-bar">Contact</div>
-    <div class="main-text">
-        <strong>Email:</strong>
-        <a href="mailto:ankur.biswas@okstate.edu">ankur.biswas@okstate.edu</a><br>
-        Oklahoma State University, Stillwater, OK, USA
-    </div>
+    <!-- SYMPOSIA -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Symposia, Conferences &amp; Service</h2>
+            <div class="wave"></div>
+        </div>
+        <ul class="entry-list">
+            <li>Organizer, special sessions on nutrient&ndash;toxin interactions in aquatic systems.</li>
+            <li>Contributor to NSF proposal development through figure design and data synthesis.</li>
+            <li>Graduate Teaching Assistant for undergraduate biology and ecology laboratories.</li>
+            <li>Mentor to undergraduate researchers at Oklahoma State University.</li>
+            <li>Member, Zoology Graduate Student Society (ZoGSS).</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block">
+        <div class="section-head">
+            <h2>Contact</h2>
+            <div class="wave"></div>
+        </div>
+        <div class="contact-block">
+            <p><strong>Email:</strong> <a href="mailto:ankur.biswas@okstate.edu">ankur.biswas@okstate.edu</a><br>
+            Oklahoma State University, Stillwater, OK, USA</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Ankur Biswas &middot; Oklahoma State University
+    </footer>
 
 </div>
 
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('section.block').forEach(el => obs.observe(el));
+} else {
+    document.querySelectorAll('section.block').forEach(el => el.classList.add('in-view'));
+    document.querySelectorAll('.right-panel > *').forEach(el => el.style.animation = 'none');
+}
+</script>
 </body>
 </html>
